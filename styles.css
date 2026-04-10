@@ -400,10 +400,99 @@ section[id] {
   letter-spacing: -0.2px;
 }
 
+.card .cfp-section-rule {
+  border: 0;
+  margin: 28px 0 20px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 12%,
+    rgba(122, 166, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0.12) 88%,
+    transparent 100%
+  );
+}
+
 .card p {
   margin: 0;
   color: rgba(255, 255, 255, 0.84);
   line-height: 1.55;
+}
+
+.committee-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0;
+}
+
+.committee-slot {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.committee-slot:first-child {
+  padding-top: 0;
+}
+
+.committee-slot:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Scoped to beat `.card p` (0,1,1) so role vs name size/weight actually apply */
+.card p.committee-slot-role {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -0.25px;
+  color: rgba(255, 255, 255, 0.96);
+  line-height: 1.28;
+}
+
+.card p.committee-slot-names {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.card p.committee-slot-names:empty::before {
+  content: "—";
+  color: rgba(255, 255, 255, 0.28);
+}
+
+/* Steering committee: larger name, smaller affiliation on the line below */
+.steering-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.steering-member {
+  margin: 0;
+  padding: 0;
+}
+
+.card .steering-member-name {
+  margin: 0 0 4px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.card .steering-member-affil {
+  margin: 0;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .grid .card {
