@@ -1,12 +1,12 @@
 :root {
-  --bg: #070a18;
-  --panel: rgba(255, 255, 255, 0.08);
-  --panel-strong: rgba(255, 255, 255, 0.14);
-  --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.72);
-  --border: rgba(255, 255, 255, 0.14);
-  --accent: #7aa6ff;
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  --bg: #ffffff;
+  --panel: rgba(255, 255, 255, 0.95);
+  --panel-strong: #f1f5f9;
+  --text: rgba(15, 23, 42, 0.92);
+  --muted: rgba(51, 65, 85, 0.88);
+  --border: rgba(15, 23, 42, 0.1);
+  --accent: #2563eb;
+  --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
   --radius: 16px;
   --max: 1100px;
 }
@@ -24,9 +24,7 @@ html {
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: radial-gradient(1200px 900px at 20% -10%, rgba(122, 166, 255, 0.35), transparent 55%),
-    radial-gradient(900px 700px at 90% 10%, rgba(94, 227, 181, 0.18), transparent 55%),
-    linear-gradient(180deg, #06081a 0%, #070a18 35%, #070a18 100%);
+  background: linear-gradient(180deg, #fafbfd 0%, #ffffff 45%, #f4f7fb 100%);
   color: var(--text);
 }
 
@@ -40,15 +38,15 @@ a {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
-  text-decoration-color: rgba(122, 166, 255, 0.65);
+  text-decoration-color: rgba(37, 99, 235, 0.45);
 }
 
 .content a:hover {
-  text-decoration-color: rgba(122, 166, 255, 0.95);
+  text-decoration-color: rgba(37, 99, 235, 0.85);
 }
 
 .content a:focus-visible {
-  outline: 2px solid rgba(122, 166, 255, 0.9);
+  outline: 2px solid rgba(37, 99, 235, 0.65);
   outline-offset: 3px;
   border-radius: 8px;
 }
@@ -150,6 +148,11 @@ a {
   color: rgba(255, 255, 255, 0.96);
 }
 
+.site-header .brand,
+.site-header .brand-title {
+  color: rgba(255, 255, 255, 0.95);
+}
+
 .nav-link:hover,
 .nav-link:focus-visible {
   outline: none;
@@ -179,9 +182,10 @@ a {
   margin: 0;
   list-style: none;
   border-radius: 14px;
-  background: rgba(10, 13, 32, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: var(--shadow);
+  /* 25% transparent (alpha 0.75): balance vs readability over light content */
+  background: rgba(74, 85, 104, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.2);
   display: none;
 }
 
@@ -199,7 +203,7 @@ a {
 .dropdown-link:hover,
 .dropdown-link:focus-visible {
   outline: none;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .nav-right {
@@ -223,12 +227,18 @@ a {
   width: 100%;
 }
 
+/* Hero + slideshow: keep light text on imagery (body is dark text elsewhere) */
 .hero {
   position: relative;
   padding: 0;
   min-height: min(78vh, 720px);
   width: 100%;
   overflow: hidden;
+  color: #ffffff;
+}
+
+.hero h1.hero-title {
+  color: #ffffff;
 }
 
 .hero-overlay {
@@ -346,8 +356,8 @@ a {
 }
 
 .dot[aria-current="true"] {
-  background: rgba(122, 166, 255, 0.95);
-  border-color: rgba(122, 166, 255, 0.95);
+  background: rgba(147, 197, 253, 0.95);
+  border-color: rgba(191, 219, 254, 0.95);
 }
 
 .content {
@@ -372,6 +382,7 @@ section[id] {
   margin: 0 0 8px;
   font-size: 28px;
   letter-spacing: -0.3px;
+  color: var(--text);
 }
 
 .section-subtitle {
@@ -392,12 +403,13 @@ section[id] {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 18px 18px;
-  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.10);
+  box-shadow: var(--shadow);
 }
 
 .card h3 {
   margin: 0 0 10px;
   letter-spacing: -0.2px;
+  color: var(--text);
 }
 
 .card .cfp-section-rule {
@@ -407,17 +419,22 @@ section[id] {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.12) 12%,
-    rgba(122, 166, 255, 0.35) 50%,
-    rgba(255, 255, 255, 0.12) 88%,
+    rgba(15, 23, 42, 0.08) 12%,
+    rgba(37, 99, 235, 0.35) 50%,
+    rgba(15, 23, 42, 0.08) 88%,
     transparent 100%
   );
 }
 
 .card p {
   margin: 0;
-  color: rgba(255, 255, 255, 0.84);
+  color: rgba(15, 23, 42, 0.82);
   line-height: 1.55;
+}
+
+.card ul,
+.card ol {
+  color: rgba(15, 23, 42, 0.82);
 }
 
 .committee-flow {
@@ -429,7 +446,7 @@ section[id] {
 
 .committee-slot {
   padding: 14px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .committee-slot:first-child {
@@ -447,7 +464,7 @@ section[id] {
   font-weight: 700;
   font-size: 20px;
   letter-spacing: -0.25px;
-  color: rgba(255, 255, 255, 0.96);
+  color: rgba(15, 23, 42, 0.95);
   line-height: 1.28;
 }
 
@@ -456,12 +473,12 @@ section[id] {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(51, 65, 85, 0.9);
 }
 
 .card p.committee-slot-names:empty::before {
   content: "—";
-  color: rgba(255, 255, 255, 0.28);
+  color: rgba(15, 23, 42, 0.25);
 }
 
 /* Steering committee: larger name, smaller affiliation on the line below */
@@ -484,7 +501,7 @@ section[id] {
   font-weight: 600;
   line-height: 1.35;
   letter-spacing: -0.2px;
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(15, 23, 42, 0.95);
 }
 
 .card .steering-member-affil {
@@ -492,7 +509,7 @@ section[id] {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.45;
-  color: rgba(255, 255, 255, 0.62);
+  color: rgba(51, 65, 85, 0.78);
 }
 
 .grid .card {
@@ -510,29 +527,30 @@ section[id] {
   gap: 12px;
   padding: 12px 12px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.10);
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .timeline-label {
   font-weight: 600;
+  color: var(--text);
 }
 
 .timeline-value {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(51, 65, 85, 0.92);
   font-variant-numeric: tabular-nums;
 }
 
 .footer {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(7, 10, 24, 0.78);
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(248, 250, 252, 0.95);
 }
 
 .footer-inner {
   max-width: calc(var(--max) + 80px);
   margin: 0 auto;
   padding: 18px 20px;
-  color: rgba(255, 255, 255, 0.72);
+  color: rgba(51, 65, 85, 0.82);
 }
 
 @media (min-width: 820px) {
