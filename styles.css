@@ -549,8 +549,44 @@ section[id] {
 .footer-inner {
   max-width: calc(var(--max) + 80px);
   margin: 0 auto;
-  padding: 18px 20px;
+  padding: 28px 24px;
   color: rgba(51, 65, 85, 0.82);
+}
+
+/* Footer message + centered copyright */
+.footer-inner p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.footer-inner p + p {
+  margin-top: 12px;
+}
+
+/* Copyright is the last footer line everywhere */
+.footer-inner p:last-child {
+  text-align: center;
+}
+
+/* Make footer links stand out */
+.footer-inner a {
+  color: rgba(15, 23, 42, 0.88);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(15, 23, 42, 0.35);
+}
+
+.footer-inner a:hover {
+  color: rgba(15, 23, 42, 0.95);
+  text-decoration-color: rgba(15, 23, 42, 0.6);
+}
+
+.footer-inner a:focus-visible {
+  outline: 2px solid rgba(37, 99, 235, 0.65);
+  outline-offset: 3px;
+  border-radius: 8px;
 }
 
 @media (min-width: 820px) {
