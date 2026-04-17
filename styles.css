@@ -263,7 +263,9 @@ a {
 }
 
 .hero-logo {
-  width: clamp(64px, 7.6vw, 96px);
+  /* Match CCS 2026 hero: SIGSAC logo is shown at 200px wide (see CCS masthead markup). */
+  width: 200px;
+  max-width: 100%;
   height: auto;
   margin: 0 auto 14px;
   display: block;
