@@ -57,8 +57,7 @@ function setupSlideshow() {
 
   containers.forEach((container) => {
     const slides = Array.from(container.querySelectorAll(".slide"));
-    const dotsWrap = container.querySelector(".slide-dots");
-    if (slides.length === 0 || !(dotsWrap instanceof HTMLElement)) return;
+    if (slides.length === 0) return;
 
     let current = slides.findIndex((s) => s.classList.contains("is-active"));
     if (current < 0) current = 0;
@@ -67,30 +66,8 @@ function setupSlideshow() {
     function setActive(next) {
       const clamped = ((next % slides.length) + slides.length) % slides.length;
       slides.forEach((s, idx) => s.classList.toggle("is-active", idx === clamped));
-      Array.from(dotsWrap.querySelectorAll("button")).forEach((b, idx) =>
-        b.setAttribute("aria-current", String(idx === clamped)),
-      );
       current = clamped;
     }
-
-    dotsWrap.innerHTML = "";
-    slides.forEach((_, idx) => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "dot";
-      btn.setAttribute("aria-label", `Show slide ${idx + 1}`);
-      btn.setAttribute("aria-current", String(idx === current));
-      btn.addEventListener("click", () => {
-        setActive(idx);
-        const t = container.dataset.timer ? Number(container.dataset.timer) : null;
-        if (t) window.clearInterval(t);
-        if (!prefersReducedMotion) {
-          const timer = window.setInterval(() => setActive(current + 1), intervalMs);
-          container.dataset.timer = String(timer);
-        }
-      });
-      dotsWrap.appendChild(btn);
-    });
 
     if (prefersReducedMotion) return;
     const timer = window.setInterval(() => setActive(current + 1), intervalMs);

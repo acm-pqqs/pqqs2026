@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var segs = location.pathname.split("/").filter(Boolean);
+        var basePath = "/";
+        if (segs.length > 0) {
+          var first = segs[0];
+          var siteTop = { "call-for": 1, code: 1, participants: 1, team: 1, assets: 1 };
+          var looksLikeFile = /\.html?$/i.test(first);
+          if (!looksLikeFile && !siteTop[first]) {
+            basePath = "/" + first + "/";
+          }
+        }
+        document.write('<base href="' + basePath + '">');
+      })();
+    </script>
+    <title>Code of Conduct — ACM PQQS 2026</title>
+    <meta name="description" content="ACM PQQS 2026 Code of Conduct (adapted from ACM policy guidance)." />
+    <link rel="icon" type="image/png" href="assets/CCS-logo.png" />
+    <link rel="apple-touch-icon" href="assets/CCS-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="top-nav" aria-label="Primary">
+        <div class="nav-left">
+          <a class="brand" href="index.html" aria-label="ACM PQQS 2026 Home">
+            <span class="brand-title">ACM PQQS 2026</span>
+          </a>
+
+          <ul class="nav-links" role="list">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Call for
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/call-for-papers.html">Call for Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/call-for-sponsorship.html">Call for Sponsorship</a></li>
+                <li><a class="dropdown-link" href="call-for/important-dates.html">Important Dates</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Participants
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="participants/registration.html">Registration</a></li>
+                <li><a class="dropdown-link" href="participants/venue-travel.html">Conference Venue &amp; Travel</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Organization
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/program-committee.html">Program Committee</a></li>
+                <li><a class="dropdown-link" href="team/organizing-committee.html">Organizing Committee</a></li>
+                <li><a class="dropdown-link" href="team/steering-committee.html">Steering Committee</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Code</button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="code/code-of-conduct.html">Code of Conduct</a></li>
+                <li><a class="dropdown-link" href="code/diversity-and-inclusion.html">Diversity and Inclusion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section id="home" class="hero" aria-label="Conference hero">
+        <div class="hero-overlay" role="presentation">
+          <div class="hero-overlay-inner">
+            <img class="hero-logo" src="assets/CCS-logo.png" alt="ACM SIGSAC logo" loading="eager" decoding="async" />
+            <p class="hero-kicker">ACM Conference on Post-Quantum and Quantum-based Security</p>
+            <h1 class="hero-title">ACM PQQS 2026</h1>
+            <p class="hero-meta">
+              <span class="hero-meta-item">November 2–4, 2026</span>
+              <span class="hero-meta-dot" aria-hidden="true">•</span>
+              <span class="hero-meta-item">San Jose, CA, USA</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="slideshow" aria-label="San Jose slideshow">
+          <div class="slide is-active" style="--bg: url('assets/new-0.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-1.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-2.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-3.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-4.jpg');"></div>
+        </div>
+      </section>
+
+      <section class="content">
+        <section class="section">
+          <div class="section-header">
+            <h2>Code of Conduct</h2>
+            <p class="section-subtitle">ACM PQQS&rsquo;26 community expectations.</p>
+          </div>
+
+          <div class="card">
+            <p>
+              The ACM Conference on Post-Quantum and Quantum-based Security (PQQS) follows
+              <a href="https://www.acm.org/special-interest-groups/volunteer-resources/officers-manual/policy-against-discrimination-and-harassment" target="_blank" rel="noreferrer">ACM&rsquo;s Policy Against Harassment at ACM Activities</a>, as stated below.
+            </p>
+
+            <p>
+              The open exchange of ideas is central to the Association for Computing Machinery&rsquo;s mission. This requires an environment that embraces diversity and provides a safe, welcoming environment for all.
+            </p>
+
+            <p>This policy applies to all ACM activities, including:</p>
+            <ul>
+              <li>
+                conferences, symposia, workshops, and events sponsored, co-sponsored, or in cooperation with ACM any ACM SIG or Chapter or any other ACM subunit;
+              </li>
+              <li>ACM member meetings;</li>
+              <li>
+                exchanges among committees or other bodies associated with ACM activities publications and communications sent through communication channels associated with ACM, including social media.
+              </li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Expected Behavior</h3>
+            <p>Unacceptable at any ACM activity is:</p>
+            <ul>
+              <li>
+                <strong>Abuse:</strong> Any action directed at an individual that (a) interferes substantially with that person&rsquo;s participation; or (b) causes that person to fear for his/her personal safety. This includes threats, intimidation, bullying, stalking, or other types of abuse.
+              </li>
+              <li>
+                <strong>Discriminatory Harassment:</strong> Any conduct that discriminates or denigrates an individual on the basis of race, ethnicity, religion, citizenship, nationality, age, sexual or gender identity, disability, or any other characteristic protected by law in the location where the ACM activity takes place.
+              </li>
+              <li>
+                <strong>Sexual Harassment:</strong> Unwelcome sexual advances, requests for sexual favors, or other verbal/physical conduct of a sexual nature. Examples include (but are not limited to):
+                <ul>
+                  <li>unwelcome advances or propositions, particularly when one individual has authority over the other;</li>
+                  <li>inappropriate touching of an individual&rsquo;s body;</li>
+                  <li>degrading or humiliating comments about an individual&rsquo;s appearance;</li>
+                  <li>using an activity-related communication channel to display or distribute sexually explicit images or messages.</li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              Alert community leaders if you notice a dangerous situation, someone in distress, or violations of this policy, even if they seem inconsequential.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Unacceptable Behavior</h3>
+            <p>Unacceptable behaviors include, but are not limited to:</p>
+            <ul>
+              <li>intimidating, harassing, abusive, discriminatory, derogatory or demeaning speech or actions</li>
+              <li>
+                offensive, degrading, humiliating, harmful, or prejudicial verbal or written comments or visual images related to gender, sexual orientation, race, religion, disability, age, appearance, or other personal characteristics
+              </li>
+              <li>unwelcome sexual advances, requests for sexual favors, or other verbal/physical conduct of a sexual nature</li>
+              <li>
+                inappropriate or gratuitous use of nudity, sexual images, or stereotyped images including using an activity-related communication channel to display or distribute sexually explicit or otherwise offensive or discriminatory images or messages
+              </li>
+              <li>deliberate intimidation, stalking or following</li>
+              <li>harassing photography or recording</li>
+              <li>sustained disruption of talks or other events</li>
+              <li>unwelcome and uninvited attention or contact</li>
+              <li>physical assault (including unwelcome touch or groping)</li>
+              <li>real or implied threat of physical harm</li>
+              <li>real or implied threat of professional or financial damage or harm</li>
+            </ul>
+
+            <p>
+              Harassment can occur when there is no deliberate intention to offend. Be careful in the words that you choose. Harassment committed in a joking manner or disguised as a compliment still constitutes unacceptable behavior. Remember that sexist, racist, and other exclusionary jokes can be offensive to those around you.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Consequences of Unacceptable Behavior</h3>
+            <p>
+              If a participant in an ACM activity engages in prohibited behavior, ACM reserves the right to take any action ACM deems appropriate. ACM reserves the right to:
+            </p>
+            <ul>
+              <li>remove an individual from any ACM activity without warning or refund;</li>
+              <li>prohibit an individual from participating in future ACM activities, including publishing in ACM publications;</li>
+              <li>exclude an individual from ACM leadership positions;</li>
+              <li>exclude any individual from deriving other benefits from ACM activities;</li>
+              <li>suspend or terminate membership in ACM.</li>
+            </ul>
+
+            <p>Such sanctions may be applied regardless of whether or not the offender is a member of ACM.</p>
+            <p>Appropriate sanctions also will be taken toward any individual who knowingly makes a false allegation of harassment.</p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>How to Report Unacceptable Behavior</h3>
+            <p>
+              Any individual who experiences harassment (as described above) at any ACM activity should follow the
+              <a href="https://www.acm.org/about-acm/reporting-unacceptable-behavior" target="_blank" rel="noreferrer">Procedures for Reporting Unacceptable Behavior</a>.
+            </p>
+            <p>
+              This policy applies only to unacceptable behavior at ACM activities. Complaints regarding other issues should be addressed as described under the applicable ACM policy. For example, complaints about papers and publications should be made under either ACM&rsquo;s
+              <a href="https://www.acm.org/about-acm/acm-code-of-ethics-and-professional-conduct" target="_blank" rel="noreferrer">Code of Ethics</a>
+              and Professional Conduct or its
+              <a href="https://www.acm.org/publications/policies/plagiarism-overview" target="_blank" rel="noreferrer">Plagiarism Policy</a>.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Addressing Grievances</h3>
+            <p>
+              If you feel you have been falsely or unfairly accused of violating this Policy Against Harassment at ACM Activities you should notify
+              <a href="mailto:advocate@acm.org">advocate@acm.org</a>
+              with a concise description of your grievance. Your grievance will be thoroughly investigated. Your grievance will be handled in accordance with our existing procedures.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Warnings and Disclaimers</h3>
+            <p>
+              This Policy Against Harassment at ACM Activities is not intended to limit open discussion of the merits of particular work or issues presented at ACM events. It applies only to behavior at ACM events and activities.
+            </p>
+            <p>ACM assumes no liability or responsibility for the actions of any member or other activity participant.</p>
+            <p>
+              ACM is not responsible for protecting the safety of members or participants in ACM activities. Any individual who feels his/her safety is at risk due to harassment or for any other reason is encouraged to take appropriate steps to ensure personal safety.
+            </p>
+            <p>
+              This Policy supersedes any policy or guidelines concerning harassment issued by ACM, or one of its Special Interest Groups, or any other ACM sub-unit.
+            </p>
+            <p>
+              There may be situations (such as those involving Title IX issues in the United States and venue- or employer-specific policies) where an on-site person who is informed of harassment will be under an obligation to file a report with an individual or organization outside of ACM.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Acknowledgments and Further Reading</h3>
+            <ul>
+              <li>
+                <a href="https://www.acm.org/special-interest-groups/volunteer-resources/officers-manual/policy-against-discrimination-and-harassment" target="_blank" rel="noreferrer">ACM Policy Against Harassment</a>
+              </li>
+              <li>
+                <a href="https://www.acm.org/about-acm/reporting-unacceptable-behavior" target="_blank" rel="noreferrer">Guide to Reporting Unacceptable Behavior</a>
+              </li>
+              <li><a href="https://www.acm.org/code-of-ethics" target="_blank" rel="noreferrer">ACM Code of Ethics</a></li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>About ACM PQQS</h3>
+            <p>
+              The ACM Conference on Post-Quantum and Quantum-based Security (PQQS) is a premier forum dedicated to research at the intersection of cybersecurity and quantum technologies. PQQS&rsquo;26 will follow the
+              <a href="https://www.acm.org/special-interest-groups/volunteer-resources/officers-manual/policy-against-discrimination-and-harassment" target="_blank" rel="noreferrer">ACM Policy Against Harassment</a>
+              at ACM Activities. Please familiarize yourself with the
+              <a href="https://www.acm.org/special-interest-groups/volunteer-resources/officers-manual/policy-against-discrimination-and-harassment" target="_blank" rel="noreferrer">ACM Policy Against Harassment</a>
+              and
+              <a href="https://www.acm.org/about-acm/reporting-unacceptable-behavior" target="_blank" rel="noreferrer">guide to Reporting Unacceptable Behavior</a>.
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 ACM PQQS. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

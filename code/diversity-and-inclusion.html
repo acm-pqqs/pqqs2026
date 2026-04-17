@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var segs = location.pathname.split("/").filter(Boolean);
+        var basePath = "/";
+        if (segs.length > 0) {
+          var first = segs[0];
+          var siteTop = { "call-for": 1, code: 1, participants: 1, team: 1, assets: 1 };
+          var looksLikeFile = /\.html?$/i.test(first);
+          if (!looksLikeFile && !siteTop[first]) {
+            basePath = "/" + first + "/";
+          }
+        }
+        document.write('<base href="' + basePath + '">');
+      })();
+    </script>
+    <title>Diversity and Inclusion — ACM PQQS 2026</title>
+    <meta name="description" content="ACM PQQS 2026 diversity and inclusion guidance for authors and attendees." />
+    <link rel="icon" type="image/png" href="assets/CCS-logo.png" />
+    <link rel="apple-touch-icon" href="assets/CCS-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="top-nav" aria-label="Primary">
+        <div class="nav-left">
+          <a class="brand" href="index.html" aria-label="ACM PQQS 2026 Home">
+            <span class="brand-title">ACM PQQS 2026</span>
+          </a>
+
+          <ul class="nav-links" role="list">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Call for
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/call-for-papers.html">Call for Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/call-for-sponsorship.html">Call for Sponsorship</a></li>
+                <li><a class="dropdown-link" href="call-for/important-dates.html">Important Dates</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Participants
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="participants/registration.html">Registration</a></li>
+                <li><a class="dropdown-link" href="participants/venue-travel.html">Conference Venue &amp; Travel</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Organization
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/program-committee.html">Program Committee</a></li>
+                <li><a class="dropdown-link" href="team/organizing-committee.html">Organizing Committee</a></li>
+                <li><a class="dropdown-link" href="team/steering-committee.html">Steering Committee</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Code</button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="code/code-of-conduct.html">Code of Conduct</a></li>
+                <li><a class="dropdown-link" href="code/diversity-and-inclusion.html">Diversity and Inclusion</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section id="home" class="hero" aria-label="Conference hero">
+        <div class="hero-overlay" role="presentation">
+          <div class="hero-overlay-inner">
+            <img class="hero-logo" src="assets/CCS-logo.png" alt="ACM SIGSAC logo" loading="eager" decoding="async" />
+            <p class="hero-kicker">ACM Conference on Post-Quantum and Quantum-based Security</p>
+            <h1 class="hero-title">ACM PQQS 2026</h1>
+            <p class="hero-meta">
+              <span class="hero-meta-item">November 2–4, 2026</span>
+              <span class="hero-meta-dot" aria-hidden="true">•</span>
+              <span class="hero-meta-item">San Jose, CA, USA</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="slideshow" aria-label="San Jose slideshow">
+          <div class="slide is-active" style="--bg: url('assets/new-0.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-1.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-2.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-3.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-4.jpg');"></div>
+        </div>
+      </section>
+
+      <section class="content">
+        <section class="section">
+          <div class="section-header">
+            <h2>Diversity and Inclusion</h2>
+            <p class="section-subtitle">Guidance for a welcoming PQQS community.</p>
+          </div>
+
+          <div class="card">
+            <p>
+              ACM PQQS is committed to taking steps to enhance the diversity and inclusion of our community. We value your feedback and input. While not everyone may have the same idea on how to make our community healthier and more welcoming to everyone, we are eager to hear your diverse ideas, and we hope that our efforts will lead to more open conversations regarding this goal.
+            </p>
+
+            <p>
+              The open exchange of ideas is central to the Association for Computing Machinery&rsquo;s mission. This requires an environment that embraces diversity and provides a safe, welcoming environment for all.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Inclusion and Diversity in Writing</h3>
+            <p>
+              As a large scientific and technical community that has a direct impact on many people from different backgrounds around the world, Diversity and Inclusion are crucial for the security community. ACM explains these goals as follows. Diversity is achieved when the individuals around the table are drawn from a variety of backgrounds and experience, leading to a breadth of viewpoints, reasoning, and approaches (also referred to as &ldquo;the who&rdquo;). Inclusion is achieved when the environment is characterized by behaviors that welcome and embrace diversity (&ldquo;the how&rdquo;). Both are important in our writing and other forms of communication such as posters and talks.
+            </p>
+
+            <h4>Inclusion</h4>
+            <p>
+              Be mindful of not using language or examples that further the marginalization, stereotyping, or erasure of any group of people, especially historically marginalized and/or under-represented groups (URGs) in computing. Of course, exclusionary treatment can arise unintentionally. Be vigilant and actively guard against such issues in your writing. Reviewers will also be empowered to monitor and demand changes if such issues arise in your submissions. Here are some examples of such issues for your benefit:
+            </p>
+
+            <p>Examples of exclusionary and other non-inclusive writing to consider avoiding:</p>
+            <ul>
+              <li>
+                <strong>Implicit assumption:</strong> An example of data integrity constraints: &ldquo;Every person has a mother and a father.&rdquo; This example is exclusionary and potentially hurtful to people from single-parent households and people with same-sex parents.
+              </li>
+              <li>
+                <strong>Oppressive terminology:</strong> Using the term &ldquo;Master-Slave&rdquo; to describe a distributed data system architecture. This can be hurtful to people whose families have suffered the inhumanity of enslavement. A good source of alternative terms to oppressive language often used in computer science can be found in
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6148600/" target="_blank" rel="noreferrer">this article</a>.
+              </li>
+              <li>
+                <strong>Marginalization of URGs:</strong> An example of attribute domains: &ldquo;The Gender attribute is either Male or Female.&rdquo; This example is exclusionary and potentially hurtful to people who are intersex, transgender, third gender, two-spirit, agender, or have other non-binary gender identities.
+              </li>
+              <li>
+                <strong>Lack of accessibility:</strong> Using color alone to convey information in a plot when good alternative data visualization schemes exist. This can be exclusionary to people who are color-blind. Please consider using patterns, symbols and textures to emphasize and contrast visual elements in graphs and figures, rather than using colors alone. Use a color-blind friendly palette that is designed with accessibility for visually impaired people. Avoid bad color combinations such as green/red or blue/purple.
+              </li>
+              <li>
+                <strong>Stereotyping:</strong> Reinforcing gender stereotypes in names or examples of roles, e.g., using only feminine names or presentations for personal secretary or assistant roles.
+              </li>
+            </ul>
+
+            <h4>Diversity</h4>
+            <p>
+              Going further, please also consider actively raising the representation of URGs in your writing. Diversity of representation helps create an environment and community culture that could ultimately make our field more welcoming and attractive to people from URGs. This is a small but crucial step you can take towards celebrating and improving our community&rsquo;s diversity. Examples of infusing diversity into writing to consider adopting:
+            </p>
+            <ul>
+              <li>
+                <strong>Embracing different cultures:</strong> Names of people are a visible way to enhance diversity of representation in writing. Instead of reusing overused names in computing such as Alice and Bob, consider using names from a variety of languages, cultures, and nationalities, e.g., Alvarez and Bano. Avail of the many online resources on this front for ideas, e.g.,
+                <a href="https://en.wikipedia.org/wiki/List_of_names_of_ethnic_origin" target="_blank" rel="noreferrer">this article on names across different cultures</a>.
+              </li>
+              <li>
+                <strong>Embracing differences in figures:</strong> Depictions of people or people-like icons in illustrations are also a good avenue to enhance diversity of representation. Consider depicting people of different gender presentations, skin colors, ability status, and other visible attributes of people.
+              </li>
+              <li>
+                <strong>Embracing gender diversity in pronouns:</strong> Consider using a variety of gender pronouns across your named examples consciously, including &ldquo;he/him/his,&rdquo; &ldquo;she/her/hers,&rdquo; and &ldquo;they/them/theirs&rdquo;. Likewise, consider using gender-neutral nouns when referring to generic roles, e.g., &ldquo;chairperson&rdquo; or just &ldquo;chair&rdquo; instead of &ldquo;chairman,&rdquo; and gender-neutral pronouns for such roles.
+              </li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Responsibility</h3>
+            <p>
+              Finally, if your work involves data-driven techniques that make decisions about people, please consider explicitly discussing whether it may lead to disparate impact on different groups, especially URGs. Consider discussing the ethical and societal implications. For example, see
+              <a href="https://journalofethics.ama-assn.org/article/what-are-important-ethical-implications-using-facial-recognition-technology-health-care/2019-02" target="_blank" rel="noreferrer">this article</a>
+              discussing the potential for disparate impact of facial recognition in healthcare and strategies to avoid or reduce harm. This
+              <a href="https://sigmod.org/category/blog/data-responsibly/" target="_blank" rel="noreferrer">SIGMOD Blog article</a>
+              also gives a comprehensive overview of various dimensions and approaches for responsible application of data management ideas. We hope our community can help permeate this culture of responsibility and awareness about potentially harmful unintended negative consequences of our work within the larger computing landscape.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Acknowledgments and Further Reading</h3>
+            <ul>
+              <li><a href="https://www.acm.org/diversity-inclusion" target="_blank" rel="noreferrer">ACM Diversity and Inclusion</a></li>
+              <li>
+                <a href="https://sigmod.org/category/blog/data-responsibly/" target="_blank" rel="noreferrer">ACM SIGMOD Blog article on &ldquo;Data, Responsibly&rdquo;</a>
+              </li>
+              <li>
+                <a href="https://journalofethics.ama-assn.org/article/what-are-important-ethical-implications-using-facial-recognition-technology-health-care/2019-02" target="_blank" rel="noreferrer">
+                  AMA Journal of Ethics article on &ldquo;What Are Important Ethical Implications of Using Facial Recognition Technology in Health Care?&rdquo;
+                </a>
+              </li>
+              <li>
+                <a href="https://medium.com/@arvid/inclusive-cs-examples-7b9f7846be45" target="_blank" rel="noreferrer">Article on &ldquo;Inclusive CS Examples&rdquo;</a>
+              </li>
+              <li>
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6148600/" target="_blank" rel="noreferrer">Article on &ldquo;Terminology, Power and Oppressive Language&rdquo;</a>
+              </li>
+              <li>
+                <a href="https://diversity.ucsd.edu/_files/resources/dei-committee-cse.pdf" target="_blank" rel="noreferrer">Helpful materials from UCSD CSE Diversity, Equity, and Inclusion Committee</a>
+              </li>
+              <li>
+                <a href="https://nips.cc/Conferences/2020/CallForPapers" target="_blank" rel="noreferrer">NeurIPS CFP on Broader Impact Statement</a>
+              </li>
+              <li>
+                <a href="https://en.wikipedia.org/wiki/List_of_names_of_ethnic_origin" target="_blank" rel="noreferrer">Wikipedia listing of names across cultures</a>
+              </li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>About ACM PQQS</h3>
+            <p>
+              The ACM Conference on Post-Quantum and Quantum-based Security (PQQS) is a premier forum dedicated to research at the intersection of cybersecurity and quantum technologies. PQQS&rsquo;26 will follow the
+              <a href="https://www.acm.org/special-interest-groups/volunteer-resources/officers-manual/policy-against-discrimination-and-harassment" target="_blank" rel="noreferrer">ACM Policy Against Harassment</a>
+              at ACM Activities. Please familiarize yourself with the
+              <a href="https://www.acm.org/special-interest-groups/volunteer-resources/officers-manual/policy-against-discrimination-and-harassment" target="_blank" rel="noreferrer">ACM Policy Against Harassment</a>
+              and
+              <a href="https://www.acm.org/about-acm/reporting-unacceptable-behavior" target="_blank" rel="noreferrer">guide to Reporting Unacceptable Behavior</a>.
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 ACM PQQS. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

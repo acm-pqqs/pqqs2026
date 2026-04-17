@@ -9,7 +9,7 @@
         var basePath = "/";
         if (segs.length > 0) {
           var first = segs[0];
-          var siteTop = { authors: 1, participants: 1, team: 1, assets: 1 };
+          var siteTop = { "call-for": 1, code: 1, participants: 1, team: 1, assets: 1 };
           var looksLikeFile = /\.html?$/i.test(first);
           if (!looksLikeFile && !siteTop[first]) {
             basePath = "/" + first + "/";
@@ -43,11 +43,12 @@
           <ul class="nav-links" role="list">
             <li class="nav-item dropdown">
               <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-                Authors
+                Call for
               </button>
               <ul class="dropdown-menu" role="list">
-                <li><a class="dropdown-link" href="authors/call-for-papers.html">Call for Papers</a></li>
-                <li><a class="dropdown-link" href="authors/important-dates.html">Important Dates</a></li>
+                <li><a class="dropdown-link" href="call-for/call-for-papers.html">Call for Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/call-for-sponsorship.html">Call for Sponsorship</a></li>
+                <li><a class="dropdown-link" href="call-for/important-dates.html">Important Dates</a></li>
               </ul>
             </li>
 
@@ -71,11 +72,17 @@
                 <li><a class="dropdown-link" href="team/steering-committee.html">Steering Committee</a></li>
               </ul>
             </li>
-          </ul>
-        </div>
 
-        <div class="nav-right">
-          <img class="nav-logo" src="assets/CCS-logo.png" alt="ACM SIGSAC logo" loading="eager" decoding="async" />
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Code
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="code/code-of-conduct.html">Code of Conduct</a></li>
+                <li><a class="dropdown-link" href="code/diversity-and-inclusion.html">Diversity and Inclusion</a></li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </nav>
     </header>
@@ -84,6 +91,7 @@
       <section id="home" class="hero" aria-label="Conference hero">
         <div class="hero-overlay" role="presentation">
           <div class="hero-overlay-inner">
+            <img class="hero-logo" src="assets/CCS-logo.png" alt="ACM SIGSAC logo" loading="eager" decoding="async" />
             <p class="hero-kicker">ACM Conference on Post-Quantum and Quantum-based Security</p>
             <h1 class="hero-title">ACM PQQS 2026</h1>
             <p class="hero-meta">
@@ -95,11 +103,11 @@
         </div>
 
         <div class="slideshow" aria-label="San Jose slideshow">
-          <div class="slide is-active" style="--bg: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=2400&q=80');"></div>
-          <div class="slide" style="--bg: url('assets/slide-1.png');"></div>
-          <div class="slide" style="--bg: url('assets/slide-2.png');"></div>
-          <div class="slide" style="--bg: url('assets/slide-3.png');"></div>
-          <div class="slide-dots" role="tablist" aria-label="Slideshow navigation"></div>
+          <div class="slide is-active" style="--bg: url('assets/new-0.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-1.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-2.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-3.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-4.jpg');"></div>
         </div>
       </section>
 
@@ -152,33 +160,6 @@
 
     <footer class="footer">
       <div class="footer-inner">
-        <p>
-          PQQS&rsquo;26 will follow the
-          <a
-            href="https://www.acm.org/special-interest-groups/volunteer-resources/officers-manual/policy-against-discrimination-and-harassment"
-            target="_blank"
-            rel="noreferrer"
-          >
-            ACM Policy Against Harassment
-          </a>
-          at ACM Activities. Please familiarize yourself with the
-          <a
-            href="https://www.acm.org/special-interest-groups/volunteer-resources/officers-manual/policy-against-discrimination-and-harassment"
-            target="_blank"
-            rel="noreferrer"
-          >
-            ACM Policy Against Harassment
-          </a>
-          and
-          <a
-            href="https://www.acm.org/about-acm/reporting-unacceptable-behavior"
-            target="_blank"
-            rel="noreferrer"
-          >
-            guide to Reporting Unacceptable Behavior
-          </a>
-          .
-        </p>
         <p>© 2026 ACM PQQS. All rights reserved.</p>
       </div>
     </footer>
