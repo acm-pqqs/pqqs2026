@@ -521,6 +521,14 @@ section[id] {
   color: rgba(51, 65, 85, 0.9);
 }
 
+.card p.committee-label {
+  margin: 12px 0 6px;
+}
+
+.card p.committee-label:first-child {
+  margin-top: 0;
+}
+
 .card ul.committee-slot-names-list li + li {
   margin-top: 6px;
 }
