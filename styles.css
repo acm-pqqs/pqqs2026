@@ -526,6 +526,10 @@ section[id] {
   color: rgba(51, 65, 85, 0.9);
 }
 
+.committee-flow ul.committee-slot-names-list {
+  font-size: 14px;
+}
+
 .card p.committee-label {
   margin: 12px 0 6px;
 }
