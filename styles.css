@@ -164,6 +164,10 @@ a {
   position: relative;
 }
 
+.dropdown.open {
+  z-index: 10000;
+}
+
 .dropdown-toggle::after {
   content: "";
   width: 8px;
@@ -184,10 +188,11 @@ a {
   list-style: none;
   border-radius: 14px;
   /* 25% transparent (alpha 0.75): balance vs readability over light content */
-  background: rgba(74, 85, 104, 0.75);
+  background: rgba(74, 85, 104, 0.92);
   border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow: 0 16px 48px rgba(15, 23, 42, 0.2);
   display: none;
+  z-index: 10001;
 }
 
 .dropdown.open .dropdown-menu {
