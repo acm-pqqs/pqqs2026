@@ -557,37 +557,6 @@ section[id] {
   border: 0;
 }
 
-/* Steering committee: larger name, smaller affiliation on the line below */
-.steering-list {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  margin: 0;
-  padding: 0;
-}
-
-.steering-member {
-  margin: 0;
-  padding: 0;
-}
-
-.card .steering-member-name {
-  margin: 0 0 4px;
-  font-size: 1.125rem;
-  font-weight: 600;
-  line-height: 1.35;
-  letter-spacing: -0.2px;
-  color: rgba(15, 23, 42, 0.95);
-}
-
-.card .steering-member-affil {
-  margin: 0;
-  font-size: 0.8125rem;
-  font-weight: 400;
-  line-height: 1.45;
-  color: rgba(51, 65, 85, 0.78);
-}
-
 .grid .card {
   grid-column: span 12;
 }
