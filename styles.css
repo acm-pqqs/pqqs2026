@@ -473,6 +473,14 @@ section[id] {
   line-height: 1.55;
 }
 
+.card p.pc-coming-soon {
+  margin: 8px 0 16px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(51, 65, 85, 0.82);
+}
+
 .card ul,
 .card ol {
   color: rgba(15, 23, 42, 0.82);
