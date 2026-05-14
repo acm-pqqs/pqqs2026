@@ -542,6 +542,31 @@ section[id] {
   margin-top: 6px;
 }
 
+.speaker-profile {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.speaker-photo {
+  width: 220px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  flex-shrink: 0;
+}
+
+.speaker-details h3 {
+  margin: 0 0 12px;
+  letter-spacing: -0.2px;
+  color: var(--text);
+}
+
+.speaker-coming-soon {
+  margin-top: 18px;
+}
+
 .map-embed {
   margin-top: 14px;
   border-radius: 14px;
@@ -736,6 +761,9 @@ section[id] {
   }
   .hero-overlay-inner {
     padding: 18px 16px;
+  }
+  .speaker-profile {
+    flex-direction: column;
   }
 }
 
