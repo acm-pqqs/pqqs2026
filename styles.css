@@ -550,6 +550,12 @@ section[id] {
   margin-top: 6px;
 }
 
+.speaker-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 .speaker-profile {
   display: flex;
   gap: 24px;
@@ -558,8 +564,10 @@ section[id] {
 
 .speaker-photo {
   width: 220px;
+  height: 275px;
   max-width: 100%;
-  height: auto;
+  object-fit: cover;
+  object-position: center top;
   border-radius: 14px;
   border: 1px solid rgba(15, 23, 42, 0.08);
   flex-shrink: 0;
