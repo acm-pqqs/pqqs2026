@@ -1,0 +1,50 @@
+name: Publish staging preview
+
+on:
+  push:
+    branches:
+      - staging
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: staging-preview
+  cancel-in-progress: true
+
+jobs:
+  publish-staging:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Checkout staging branch
+        uses: actions/checkout@v4
+        with:
+          ref: staging
+          path: staging-src
+
+      - name: Sync staging preview into main
+        run: |
+          rm -rf staging
+          mkdir -p staging
+          rsync -a staging-src/ staging/ \
+            --exclude .git \
+            --exclude .github
+
+      - name: Commit and push staging preview
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add staging
+          if git diff --staged --quiet; then
+            echo "No staging preview changes to publish."
+            exit 0
+          fi
+          git commit -m "Update staging preview"
+          git push origin main
