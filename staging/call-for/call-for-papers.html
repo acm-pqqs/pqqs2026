@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var segs = location.pathname.split("/").filter(Boolean);
+        var basePath = "/";
+        if (segs.length > 0) {
+          var first = segs[0];
+          var siteTop = { "call-for": 1, code: 1, participants: 1, team: 1, assets: 1 };
+          var looksLikeFile = /\.html?$/i.test(first);
+          if (!looksLikeFile && !siteTop[first]) {
+            basePath = "/" + first + "/";
+            if (segs.length > 1 && segs[1] === "staging") {
+              basePath += "staging/";
+            }
+          }
+        }
+        document.write('<base href="' + basePath + '">');
+      })();
+    </script>
+    <title>Call for Papers — ACM PQQS 2026</title>
+    <meta
+      name="description"
+      content="Call for Papers for ACM PQQS 2026 — topics, submissions, review, policies, dates, and contact (ACM SIGSAC)."
+    />
+    <link rel="icon" type="image/png" href="assets/CCS-logo.png" />
+    <link rel="apple-touch-icon" href="assets/CCS-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="top-nav" aria-label="Primary">
+        <div class="nav-left">
+          <a class="brand" href="index.html" aria-label="ACM PQQS 2026 Home">
+            <span class="brand-title">ACM PQQS 2026</span>
+          </a>
+
+          <ul class="nav-links" role="list">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Papers
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/call-for-papers.html">Call for Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/important-dates.html">Important Dates</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Attend
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="participants/registration.html">Registration</a></li>
+                <li><a class="dropdown-link" href="participants/venue-travel.html">Conference Venue &amp; Travel</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Sponsorship
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/call-for-sponsorship.html">Call for Sponsorship</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="team/keynote-speaker.html">Keynote Speakers</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Organizing Committees
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/program-committee.html">Program Committee</a></li>
+                <li><a class="dropdown-link" href="team/organizing-committee.html">Organizing Committee</a></li>
+                <li><a class="dropdown-link" href="team/steering-committee.html">Steering Committee</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Code</button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="code/code-of-conduct.html">Code of Conduct</a></li>
+                <li><a class="dropdown-link" href="code/diversity-and-inclusion.html">Diversity and Inclusion</a></li>
+                <li><a class="dropdown-link" href="code/acm-open-access-policy.html">ACM Open-Access Policy</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+      </nav>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section id="home" class="hero" aria-label="Conference hero">
+        <div class="hero-overlay" role="presentation">
+          <div class="hero-overlay-inner">
+            <img class="hero-logo" src="assets/CCS-logo.png" alt="ACM SIGSAC logo" loading="eager" decoding="async" />
+            <p class="hero-kicker">ACM Conference on Post-Quantum and Quantum-based Security</p>
+            <h1 class="hero-title">ACM PQQS 2026</h1>
+            <p class="hero-meta">
+              <span class="hero-meta-item">November 2–4, 2026</span>
+              <span class="hero-meta-dot" aria-hidden="true">•</span>
+              <span class="hero-meta-item">San Jose, CA, USA</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="slideshow" aria-label="San Jose slideshow">
+          <div class="slide is-active" style="--bg: url('assets/new-0.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-2.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-3.jpg');"></div>
+          <div class="slide" style="--bg: url('assets/new-4.jpg');"></div>
+        </div>
+      </section>
+
+      <section class="content">
+        <section class="section">
+          <div class="section-header">
+            <h2>Call for Papers</h2>
+            <p class="section-subtitle">
+              ACM SIGSAC Conference on Post-Quantum and Quantum-based Security
+              <span aria-hidden="true"> &middot; </span>
+              <a href="https://www.pqqs.org" target="_blank" rel="noopener noreferrer">https://www.pqqs.org</a><br />
+              November 2&ndash;4, 2026<br />
+              San Jose, California, USA
+            </p>
+          </div>
+
+          <div class="card">
+            <p>
+              The ACM Conference on Post-Quantum and Quantum-based Security (PQQS) is a premier forum dedicated to
+              research at the intersection of cybersecurity and quantum technologies. The inaugural edition of PQQS
+              establishes a new international forum dedicated to the theory and practice of information security in the
+              emerging quantum era. The conference brings together researchers and practitioners from academia, industry,
+              and government to advance both foundational and applied aspects of classical (including post-quantum and
+              information-theoretic) and quantum approaches to information security, and to explore novel applications of
+              quantum information. It aims to provide a unified venue for rigorous, forward-looking research addressing
+              the challenges of securing information in a quantum-enabled world. The conference spans quantum-enabled
+              security systems, quantum-safe security approaches (including post-quantum and information-theoretic
+              methods), and security of quantum systems, bringing together perspectives from theory, systems, deployment,
+              and standardization.
+            </p>
+            <div style="height: 12px"></div>
+            <p>
+              PQQS&rsquo;26 welcomes high-quality original research contributions spanning classical post-quantum
+              security, information-theoretic and quantum cryptography, secure systems and infrastructures, transition
+              and deployment challenges, and standards and ecosystem readiness. We especially encourage submissions that
+              connect strong foundations with practical relevance and real-world deployment.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Topics of Interest</h3>
+            <p>Topics include, but are not limited to:</p>
+            <div style="height: 8px"></div>
+            <p><strong>1. Foundations, Cryptanalysis, and Cryptographic Design</strong></p>
+            <ul>
+              <li>Post-quantum cryptography: lattice-based, code-based, multivariate, isogeny-inspired, hash-based, and symmetric-key approaches</li>
+              <li>Security reductions, formal models, and provable security for quantum-safe systems</li>
+              <li>Cryptanalysis of post-quantum and quantum-resistant schemes</li>
+              <li>Information-theoretic cryptography and long-term security</li>
+              <li>Hybrid cryptographic designs combining classical, post-quantum, and information-theoretic techniques</li>
+              <li>Authentication, key establishment, signatures, encryption, and advanced cryptographic protocols for the quantum era</li>
+              <li>Efficient implementations and performance trade-offs for quantum-safe cryptography</li>
+            </ul>
+            <p><strong>2. Quantum Cryptographic and Communication Systems</strong></p>
+            <ul>
+              <li>Quantum cryptography: foundations, design, and analysis</li>
+              <li>Quantum key distribution (QKD) and quantum communication networks</li>
+              <li>Security of quantum devices and hardware implementations</li>
+              <li>Security of quantum compilers and quantum cloud platforms</li>
+              <li>Verification and formal models for quantum protocols</li>
+              <li>Quantum-secure network architectures</li>
+              <li>Quantum randomness generation and certification</li>
+              <li>Side-channel and implementation attacks on quantum systems</li>
+              <li>Integration of classical and quantum cryptographic infrastructures</li>
+            </ul>
+            <p><strong>3. Systems and Infrastructure Security in the Quantum Era</strong></p>
+            <ul>
+              <li>Secure migration of large-scale distributed systems</li>
+              <li>Post-quantum security in 5G/6G, edge, and satellite networks</li>
+              <li>Quantum-safe PKI and identity management</li>
+              <li>Blockchain and distributed ledger security in a post-quantum world</li>
+              <li>Consensus protocols and cryptoeconomic security under quantum adversaries</li>
+              <li>Secure firmware, hardware accelerators, and trusted execution under post-quantum assumptions</li>
+              <li>Cloud and data-center cryptographic transition</li>
+            </ul>
+            <p><strong>4. Deployment, Policy, and Ecosystem Readiness</strong></p>
+            <ul>
+              <li>Security risk assessment and transition planning</li>
+              <li>Economic and operational impacts of quantum migration</li>
+              <li>Certification, compliance, and regulatory frameworks</li>
+              <li>Government and industry migration case studies</li>
+              <li>Tools, benchmarks, testbeds, and experimental platforms</li>
+              <li>Standardization, interoperability, and deployment guidance</li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Industry-Academia Day</h3>
+            <p>
+              PQQS&rsquo;26 will feature a dedicated <strong>industry-academia day</strong> on the
+              <strong>final day of the conference</strong>. This day will emphasize real-life deployments, migration
+              experiences, products and platforms, standards, policies and compliance regulations, ecosystem readiness,
+              and lessons learned from academia, industry, and government practices and collaboration.
+            </p>
+            <div style="height: 8px"></div>
+            <p>
+              The day will include invited talks, panels, demos, and lightning talks by academia, industry, and
+              government organizations.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Submission Categories</h3>
+            <p><strong>Regular Papers</strong></p>
+            <p>
+              Regular papers should present original research results that have not been previously published and are not
+              simultaneously under review by another venue with published proceedings. Regular papers must be no longer
+              than <strong>12 pages</strong> in the prescribed format, excluding references and clearly marked appendices.
+            </p>
+            <div style="height: 8px"></div>
+            <p><strong>Short Papers</strong> <span class="cfp-new-badge">(NEW)</span></p>
+            <p>
+              Short papers should present original research results that have not been previously published and are not
+              simultaneously under review by another venue with published proceedings. Short papers must be no longer
+              than <strong>6 pages</strong> in the prescribed format, excluding references and clearly marked appendices.
+            </p>
+            <div style="height: 8px"></div>
+            <p><strong>Poster Papers</strong></p>
+            <p>
+              PQQS&rsquo;26 will also accept <strong>poster submissions</strong>. Poster papers may present
+              late-breaking results, novel ideas, ongoing work, system prototypes, implementation experience, datasets,
+              benchmarks, or emerging research directions of interest to the PQQS community.
+            </p>
+            <div style="height: 8px"></div>
+            <p>
+              Poster submissions will be <strong>2 pages</strong>, including references, and will follow the same
+              anonymization rules as regular papers. If accepted, they will be presented at the conference poster session.
+              For accepted posters, inclusion in the proceedings is conditional on presenting the poster at the conference
+              poster session.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Review Process</h3>
+            <ul>
+              <li>PQQS&rsquo;26 will use a <strong>single-round</strong> review process.</li>
+              <li>There will be <strong>one round of reviewing</strong> for the research track.</li>
+              <li>Submissions will be reviewed by the Program Committee and, when needed, by external reviewers.</li>
+              <li>There will be <strong>no rebuttal phase</strong>.</li>
+              <li>Decisions will be based on originality, technical quality, significance, clarity, and relevance to PQQS.</li>
+              <li>Accepted papers may be subject to revision requests from the Program Chairs before final publication.</li>
+              <li>
+                Accepted papers may be assigned to a shepherd who will oversee the finalization of the paper. The final
+                version of each shepherded paper requires the approval of the shepherd.
+              </li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Submission Policies</h3>
+            <p><strong>Originality and Concurrent Submissions</strong></p>
+            <p>
+              Submissions must describe original, unpublished work. A submission must not substantially overlap with any
+              paper that has been published or accepted for publication, or that is simultaneously under review at a
+              journal, conference, or workshop with published proceedings.
+            </p>
+            <div style="height: 8px"></div>
+            <p>Authors should clearly distinguish the submission from any closely related prior or concurrent work.</p>
+            <div style="height: 12px"></div>
+            <p><strong>Anonymity</strong></p>
+            <p>
+              Submissions will be reviewed under a double-blind review process. Authors must ensure that their papers are
+              properly anonymized: author names and affiliations must be omitted, self-references should be written in the
+              third person, and submissions that are not adequately anonymized may be rejected without review.
+            </p>
+            <div style="height: 12px"></div>
+            <p><strong>Conflicts of Interest</strong></p>
+            <p>
+              Authors must declare conflicts of interest at submission. PQQS&rsquo;26 will follow the
+              <a
+                href="https://www.acm.org/publications/policies/conflict-of-interest"
+                target="_blank"
+                rel="noopener noreferrer"
+                >ACM conflict-of-interest policy</a
+              >.
+            </p>
+            <div style="height: 12px"></div>
+            <p><strong>Formatting</strong></p>
+            <p>
+              Submissions must be made in PDF using the official
+              <a href="https://www.acm.org/publications/proceedings-template" target="_blank" rel="noopener noreferrer"
+                >ACM conference format</a
+              >, using the ACM proceedings templates.
+            </p>
+            <div style="height: 8px"></div>
+            <p>
+              <strong>Regular papers:</strong> limited to <strong>12 pages</strong> excluding references and clearly marked appendices
+              (appendices are supplementary materials and may not be used for review by the reviewers).
+            </p>
+            <div style="height: 8px"></div>
+            <p>
+              <strong>Short papers:</strong> limited to <strong>6 pages</strong> excluding references and clearly marked appendices
+              (appendices are supplementary materials and may not be used for review by the reviewers).
+            </p>
+            <div style="height: 8px"></div>
+            <p>
+              <strong>Poster papers:</strong> must follow the same format as regular papers, and are limited to 2 pages in
+              total including references.
+            </p>
+            <div style="height: 12px"></div>
+            <p><strong>Supplementary Material and Artifacts</strong></p>
+            <p>
+              Authors may submit supplementary material to support the evaluation of their work. Supplementary material
+              may include artifacts, appendices, full proofs of theorems, software, datasets, and other supporting
+              content. Such material is intended to aid evaluation; however, reviewers are not required to read it, and the
+              paper must be self-contained in presenting its main contributions and technical arguments.
+            </p>
+            <div style="height: 12px"></div>
+            <p><strong>Ethics and Responsible Research</strong></p>
+            <p>
+              Submissions involving human subjects, user data, operational measurements, vulnerability discovery, or other
+              sensitive experiments that may or may not include AI in some form should include a discussion of ethical
+              considerations, appropriate permissions, as applicable.
+            </p>
+            <div style="height: 12px"></div>
+            <p><strong>Authorship and Generative AI Tools</strong></p>
+            <p>
+              PQQS&rsquo;26 will follow
+              <a
+                href="https://www.acm.org/publications/policies/new-acm-policy-on-authorship"
+                target="_blank"
+                rel="noopener noreferrer"
+                >ACM&rsquo;s authorship policy</a
+              >.
+              Generative AI tools may not be listed as authors. If such tools are used to create content, that use should be
+              disclosed as required by ACM policy, and the human authors remain fully responsible for the submission.
+            </p>
+            <div style="height: 12px"></div>
+            <p><strong>Reviewing Policy</strong></p>
+            <p>
+              PQQS&rsquo;26 will follow the
+              <a href="https://www.acm.org/publications/policies/peer-review" target="_blank" rel="noopener noreferrer"
+                >ACM peer review policy</a
+              >.
+            </p>
+            <div style="height: 12px"></div>
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>ACM Publication Policy</h3>
+            <p>
+              By submitting your article to an ACM Publication, you are hereby acknowledging that you and your co-authors
+              are subject to all
+              <a href="https://www.acm.org/publications/policies" target="_blank" rel="noopener noreferrer"
+                >ACM Publications Policies</a
+              >, including ACM&rsquo;s new
+              <a
+                href="https://www.acm.org/publications/policies/research-involving-human-participants-and-subjects"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Publications Policy on Research Involving Human Participants and Subjects</a
+              >. Alleged violations of this policy or any ACM Publications Policy will be investigated by ACM and may
+              result in a full retraction of your paper, in addition to other potential penalties, as per ACM
+              Publications Policy.
+            </p>
+            <div style="height: 8px"></div>
+            <p>
+              Please ensure that you and your co-authors
+              <a href="https://orcid.org/register" target="_blank" rel="noopener noreferrer">obtain an ORCID ID</a>, so
+              you can complete the publishing process for your accepted paper. ACM has been involved in ORCID from the
+              start and we have recently made a
+              <a href="https://authors.acm.org/author-resources/orcid-faqs" target="_blank" rel="noopener noreferrer"
+                >commitment to collect ORCID IDs from all of our published authors</a
+              >. We are committed to improve author discoverability, ensure proper attribution and contribute to ongoing
+              community efforts around name normalization; your ORCID ID will help in these efforts.
+            </p>
+            <div style="height: 12px"></div>
+            <p><strong>Important update on ACM&rsquo;s new open access publishing model for 2026 ACM Conferences!</strong></p>
+            <p>
+              Starting January 1, 2026, ACM will fully transition to Open Access. All ACM publications, including those
+              from ACM-sponsored conferences, will be 100% Open Access. Authors will have two primary options for
+              publishing Open Access articles with ACM: the ACM Open institutional model or by paying Article Processing
+              Charges (APCs). With over 2,600 institutions already part of ACM Open, the majority of ACM-sponsored
+              conference papers will not require APCs from authors or conferences (currently, around 76%).
+            </p>
+            <div style="height: 8px"></div>
+            <p>
+              Authors from institutions not participating in ACM Open will need to pay an APC to publish their papers,
+              unless they qualify for a financial waiver. To find out whether an APC applies to your article, please
+              consult the list of
+              <a href="https://libraries.acm.org/acmopen/open-participants" target="_blank" rel="noopener noreferrer"
+                >participating institutions</a
+              >
+              in ACM Open and review the
+              <a
+                href="https://www.acm.org/publications/policies/policy-on-discretionary-open-access-apc-waivers"
+                target="_blank"
+                rel="noopener noreferrer"
+                >https://www.acm.org/publications/policies/policy-on-discretionary-open-access-apc-waivers</a
+              >. Keep in mind that waivers are rare and are granted based on specific criteria set by ACM.
+            </p>
+            <div style="height: 8px"></div>
+            <p>
+              Understanding that this change could present financial challenges, ACM has approved a temporary subsidy for
+              2026 to ease the transition and allow more time for institutions to join ACM Open. The subsidy will offer:
+            </p>
+            <ul>
+              <li>$250 APC for ACM/SIG members</li>
+              <li>$350 for non-members</li>
+            </ul>
+            <p>
+              This represents a
+              <a href="https://www.acm.org/publications/openaccess" target="_blank" rel="noopener noreferrer"
+                >65% discount</a
+              >, funded directly by ACM. Authors are encouraged to help advocate for their institutions to join ACM Open
+              during this transition period.
+            </p>
+            <div style="height: 8px"></div>
+            <p>This temporary subsidized pricing will apply to all conferences scheduled for 2026.</p>
+
+            <div style="height: 12px"></div>
+            <p><strong>Important update on ACM&rsquo;s open access publishing model for 2027 ACM Conferences!</strong></p>
+            <p>
+              All ACM publications, including those from ACM-sponsored conferences, are 100% Open Access. Authors have
+              two primary options for publishing Open Access articles with ACM: the ACM Open institutional model or by
+              paying Article Processing Charges (APCs). With ~3,000 institutions already part of ACM Open, the majority
+              of ACM-sponsored conference papers will not require APCs from authors or conferences (currently, around
+              76%).
+            </p>
+            <div style="height: 8px"></div>
+            <p>
+              Authors from institutions not participating in ACM Open will need to pay an APC to publish their papers,
+              unless they qualify for a financial or discretionary waiver. To find out whether an APC applies to your
+              article, please consult the list of
+              <a href="https://libraries.acm.org/acmopen/open-participants" target="_blank" rel="noopener noreferrer"
+                >participating institutions</a
+              >
+              in ACM Open and review the
+              <a
+                href="https://www.acm.org/publications/policies/policy-on-open-access-apc-waivers-and-discounts"
+                target="_blank"
+                rel="noopener noreferrer"
+                >APC Waivers and Discounts Policy</a
+              >. Please keep in mind that waivers are rare and are granted based on specific criteria set by ACM.
+            </p>
+            <div style="height: 8px"></div>
+            <p>
+              To support authors and institutions as they continue to adapt to ACM&rsquo;s Open Access publishing model,
+              the ACM Council has approved subsidized APC rates for calendar year 2027 allowing more time for
+              institutions to join ACM Open. The subsidy will offer:
+            </p>
+            <ul>
+              <li>$500 APC for ACM/SIG members</li>
+              <li>$750 for non-members</li>
+            </ul>
+            <p>
+              This represents a 29% discount off current APC list pricing, funded directly by ACM. Authors are encouraged
+              to help advocate for their institutions to join ACM Open during this transition period.
+            </p>
+            <div style="height: 8px"></div>
+            <p>This temporary subsidized pricing will apply to all conferences scheduled for 2027.</p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Scope and Evaluation Criteria</h3>
+            <p>All PQQS&rsquo;26 submissions will be evaluated on their merits, as applicable, based on the following criteria:</p>
+            <ul>
+              <li>Originality</li>
+              <li>Technical quality</li>
+              <li>Significance</li>
+              <li>Clarity of presentation</li>
+              <li>Relevance to the goals and scope of PQQS</li>
+            </ul>
+            <p>Papers that are out of scope may be desk-rejected at the discretion of the Program Chairs.</p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Proceedings</h3>
+            <p>All accepted and invited papers will appear in the ACM conference proceedings.</p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Presentation and Registration</h3>
+            <p>
+              At least one author of each accepted and invited paper, including poster papers, must register for the full
+              conference and present the work.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Important Dates</h3>
+            <ul>
+              <li>Abstract registration deadline: <strong>July 19, 2026</strong></li>
+              <li>Regular paper submission deadline: <strong>July 26, 2026</strong></li>
+              <li>Author notification: <strong>September 15, 2026</strong></li>
+              <li>Poster paper submission deadline: <strong>September 25, 2026</strong></li>
+              <li>Poster notification: <strong>October 9, 2026</strong></li>
+            </ul>
+            <p>
+              All deadlines are 11:59 p.m.
+              <strong>Anywhere on Earth (AoE / UTC&minus;12)</strong>
+              unless otherwise noted.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Submission Site</h3>
+            <p>
+              Submissions are accepted at
+              <a href="https://pqqs26.hotcrp.com/" target="_blank" rel="noopener noreferrer"
+                ><strong>https://pqqs26.hotcrp.com/</strong></a
+              >.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Organizing Committee</h3>
+            <p class="committee-label"><strong>General Chairs</strong></p>
+            <ul class="committee-slot-names-list" aria-label="General Chairs">
+              <li>Elisa Bertino</li>
+            </ul>
+            <p class="committee-label"><strong>Program Chairs</strong></p>
+            <ul class="committee-slot-names-list" aria-label="Program Chairs">
+              <li>Reihaneh Safavi-Naini</li>
+              <li>Ashish Kundu</li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Program Committee (<a href="team/program-committee.html">view full committee</a>)</h3>
+            <p class="pc-coming-soon">Additional PC members will be announced soon</p>
+            <ul class="committee-slot-names-list" aria-label="Program Committee">
+              <li>Navid Alamati, <em>Visa Research</em></li>
+              <li>Romain Alléaume, <em>Télécom Paris — Institut Polytechnique de Paris, Inria</em></li>
+              <li>Utsav Banerjee, <em>Indian Institute of Science</em></li>
+              <li>Benjamin Dowling, <em>King&#x27;s College London</em></li>
+              <li>Domenic Forte, <em>University of Florida</em></li>
+              <li>Steven Galbraith, <em>University of Auckland</em></li>
+              <li>Fatemeh Ganji, <em>Worcester Polytechnic Institute</em></li>
+              <li>Sanjam Garg, <em>University of California, Berkeley</em></li>
+              <li>Daniel Genkin, <em>Georgia Tech</em></li>
+              <li>David Jao, <em>University of Waterloo and evolutionQ, Inc.</em></li>
+              <li>Aniket Kate, <em>Purdue University / Mysten Labs</em></li>
+              <li>Mustafa Khairallah, <em>Umeå University</em></li>
+              <li>Pascal Lafourcade, <em>Université Clermont Auvergne, LIMOS</em></li>
+              <li>Junyu Liu, <em>University of Pittsburgh</em></li>
+              <li>Miralem Mehic, <em>University of Sarajevo, Bosnia and Herzegovina</em></li>
+              <li>Reza Nejabati, <em>Cisco Systems</em></li>
+              <li>Chris Peikert, <em>University of Michigan (Ann Arbor)</em></li>
+              <li>Christiane Peters, <em>Google</em></li>
+              <li>Doreen Riepel, <em>CISPA Helmholtz Center for Information Security</em></li>
+              <li>Palash Sarkar, <em>Indian Statistical Institute</em></li>
+              <li>Jean-Pierre Seifert, <em>Technische Universität Berlin</em></li>
+              <li>Seung-Hyun Seo, <em>Hanyang University</em></li>
+              <li>Johanna Sepulveda, <em>Airbus Defence and Space</em></li>
+              <li>FANG Song, <em>Portland State University</em></li>
+              <li>Martijn Stam, <em>Simula UiB</em></li>
+              <li>Douglas Stebila, <em>University of Waterloo</em></li>
+              <li>Willy Susilo, <em>University of Wollongong, Australia</em></li>
+              <li>Hoaxiong Wang, <em>Nanyang Technological University</em></li>
+              <li>Ramona Wolf, <em>University of Innsbruck</em></li>
+              <li>Chaoping Xing, <em>Shanghai Jiao Tong University</em></li>
+              <li>Attila A Yavuz, <em>University of South Florida</em></li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Contact</h3>
+            <p>
+              For questions regarding submissions, please contact:
+              <a href="mailto:acmpqqs26@gmail.com"><strong>acmpqqs26@gmail.com</strong></a>
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 ACM PQQS. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
