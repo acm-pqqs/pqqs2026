@@ -432,6 +432,58 @@ section[id] {
   max-width: 75ch;
 }
 
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
+  gap: 20px;
+}
+
+.sponsor-card {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.sponsor-card-gold {
+  border-color: rgba(180, 135, 20, 0.55);
+  box-shadow:
+    0 12px 40px rgba(15, 23, 42, 0.08),
+    inset 0 4px 0 #c99a22;
+}
+
+.sponsor-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 170px;
+  padding: 30px;
+  background: linear-gradient(180deg, #fffdf7 0%, #ffffff 100%);
+}
+
+.sponsor-logo {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+  max-height: 110px;
+  object-fit: contain;
+}
+
+.sponsor-tier {
+  padding: 11px 16px;
+  border-top: 1px solid rgba(180, 135, 20, 0.35);
+  background: rgba(201, 154, 34, 0.1);
+  color: #8a6500;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
