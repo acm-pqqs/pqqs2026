@@ -6,6 +6,8 @@
   --muted: rgba(51, 65, 85, 0.88);
   --border: rgba(15, 23, 42, 0.1);
   --accent: #2563eb;
+  --date-accent: #2563eb;
+  --date-past: #dc2626;
   --shadow: 0 12px 40px rgba(15, 23, 42, 0.08);
   --radius: 16px;
   --max: 1100px;
@@ -432,6 +434,68 @@ section[id] {
   max-width: 75ch;
 }
 
+.whats-new-list,
+.dated-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.whats-new-list li + li,
+.dated-list li + li {
+  margin-top: 12px;
+}
+
+.dated-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.whats-new-date {
+  flex: 0 0 7.25rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(51, 65, 85, 0.72);
+}
+
+.dated-list-date {
+  flex: 0 0 7.25rem;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--date-accent);
+}
+
+.dated-list-date.is-past {
+  color: var(--date-past);
+}
+
+.dated-list-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.home-dual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.home-dual-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.home-dual-panel .section-header {
+  margin-bottom: 14px;
+}
+
+.home-dual-panel .card {
+  flex: 1;
+}
+
 .sponsor-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 280px));
@@ -844,6 +908,9 @@ section[id] {
   }
   .speaker-profile {
     flex-direction: column;
+  }
+  .home-dual-grid {
+    grid-template-columns: 1fr;
   }
 }
 

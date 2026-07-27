@@ -13,6 +13,9 @@
           var looksLikeFile = /\.html?$/i.test(first);
           if (!looksLikeFile && !siteTop[first]) {
             basePath = "/" + first + "/";
+            if (segs.length > 1 && segs[1] === "staging") {
+              basePath += "staging/";
+            }
           }
         }
         document.write('<base href="' + basePath + '">');
@@ -161,9 +164,6 @@
 
       <section class="content">
         <section id="announcement" class="section">
-          <div class="section-header">
-            <h2>Announcement</h2>
-          </div>
           <div class="card">
             <p>
               ACM SIGSAC announces the inaugural ACM Conference on Post-Quantum and Quantum-based Security (PQQS). PQQS
@@ -173,27 +173,82 @@
           </div>
         </section>
 
-        <section id="whats-new" class="section">
-          <div class="section-header">
-            <h2>What’s New</h2>
-            <p class="section-subtitle">Latest updates and quick links.</p>
-          </div>
-          <div class="card">
-            <ul>
-              <li>
-                <a href="https://pqqs26.hotcrp.com/" target="_blank" rel="noopener noreferrer">Submission</a> is now
-                <strong>open</strong>.
-              </li>
-              <li>
-                <strong>New:</strong> The conference invites short papers.
-              </li>
-              <li>
-                <a href="call-for/call-for-papers.html">Call for Papers</a> is <strong>available</strong>.
-              </li>
-              <li>
-                <a href="call-for/important-dates.html">Important Dates</a> have been <strong>posted</strong>.
-              </li>
-            </ul>
+        <section id="updates-and-dates" class="section">
+          <div class="home-dual-grid">
+            <div class="home-dual-panel">
+              <div class="section-header">
+                <h2>Important Dates</h2>
+              </div>
+              <div class="card">
+                <ul class="dated-list dated-list-deadlines">
+                  <li>
+                    <span class="dated-list-date" data-date="2026-08-10">Aug 10, 2026</span>
+                    <span class="dated-list-text">Regular paper submission deadline</span>
+                  </li>
+                  <li>
+                    <span class="dated-list-date" data-date="2026-08-10">Aug 10, 2026</span>
+                    <span class="dated-list-text">Short paper submission deadline</span>
+                  </li>
+                  <li>
+                    <span class="dated-list-date" data-date="2026-09-15">Sep 15, 2026</span>
+                    <span class="dated-list-text">Author notification</span>
+                  </li>
+                  <li>
+                    <span class="dated-list-date" data-date="2026-09-25">Sep 25, 2026</span>
+                    <span class="dated-list-text">Poster paper submission deadline</span>
+                  </li>
+                  <li>
+                    <span class="dated-list-date" data-date="2026-10-09">Oct 9, 2026</span>
+                    <span class="dated-list-text">Poster notification</span>
+                  </li>
+                  <li>
+                    <span class="dated-list-date" data-date="2026-11-04">Nov 2&ndash;4, 2026</span>
+                    <span class="dated-list-text">Conference</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="home-dual-panel">
+              <div class="section-header">
+                <h2>Updates</h2>
+              </div>
+              <div class="card">
+                <ul class="dated-list">
+                  <li>
+                    <span class="dated-list-date">Jul 15, 2026</span>
+                    <span class="dated-list-text">Regular paper submission deadline updated.</span>
+                  </li>
+                  <li>
+                    <span class="dated-list-date">Jul 15, 2026</span>
+                    <span class="dated-list-text">Abstract registration no longer required.</span>
+                  </li>
+                  <li>
+                    <span class="dated-list-date">Jul 8, 2026</span>
+                    <span class="dated-list-text">
+                      <a href="https://pqqs26.hotcrp.com/" target="_blank" rel="noopener noreferrer">Submission</a> is now
+                      <strong>open</strong>.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="dated-list-date">Jul 8, 2026</span>
+                    <span class="dated-list-text">The conference invites short papers.</span>
+                  </li>
+                  <li>
+                    <span class="dated-list-date">May 14, 2026</span>
+                    <span class="dated-list-text">
+                      <a href="call-for/call-for-papers.html">Call for Papers</a> is <strong>available</strong>.
+                    </span>
+                  </li>
+                  <li>
+                    <span class="dated-list-date">May 14, 2026</span>
+                    <span class="dated-list-text">
+                      <a href="call-for/important-dates.html">Important Dates</a> have been <strong>posted</strong>.
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </section>
 
