@@ -564,6 +564,13 @@ section[id] {
   color: var(--text);
 }
 
+.card h4 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+  letter-spacing: -0.15px;
+  color: var(--text);
+}
+
 .card .cfp-section-rule {
   border: 0;
   margin: 28px 0 20px;
