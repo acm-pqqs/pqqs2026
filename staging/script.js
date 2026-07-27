@@ -75,9 +75,25 @@ function setupSlideshow() {
   });
 }
 
+function setupDatedListColors() {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  document.querySelectorAll(".dated-list-deadlines .dated-list-date[data-date]").forEach((el) => {
+    const raw = el.getAttribute("data-date");
+    if (!raw) return;
+    const parts = raw.split("-").map(Number);
+    if (parts.length !== 3 || parts.some((n) => Number.isNaN(n))) return;
+    const date = new Date(parts[0], parts[1] - 1, parts[2]);
+    date.setHours(0, 0, 0, 0);
+    el.classList.toggle("is-past", date < today);
+  });
+}
+
 function init() {
   setupDropdowns();
   setupSlideshow();
+  setupDatedListColors();
 }
 
 if (document.readyState === "loading") {
