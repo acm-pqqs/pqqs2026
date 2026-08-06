@@ -16,6 +16,7 @@ function setupDropdowns() {
   triggers.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.preventDefault();
+      e.stopPropagation();
       const parent = btn.closest(".dropdown");
       if (!parent) return;
       const willOpen = !parent.classList.contains("open");
@@ -48,30 +49,40 @@ function setupDropdowns() {
   });
 }
 
-function setupSlideshow() {
-  const containers = Array.from(document.querySelectorAll(".slideshow"));
-  if (containers.length === 0) return;
+function setupMobileNav() {
+  const header = document.querySelector(".site-header");
+  const toggle = document.querySelector(".nav-toggle");
+  const nav = document.querySelector("#primary-nav");
+  if (!header || !toggle || !nav) return;
 
-  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const intervalMs = 5500;
+  function setOpen(open) {
+    header.classList.toggle("nav-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.classList.toggle("nav-lock", open);
+  }
 
-  containers.forEach((container) => {
-    const slides = Array.from(container.querySelectorAll(".slide"));
-    if (slides.length === 0) return;
+  toggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    setOpen(!header.classList.contains("nav-open"));
+  });
 
-    let current = slides.findIndex((s) => s.classList.contains("is-active"));
-    if (current < 0) current = 0;
-    slides.forEach((s, idx) => s.classList.toggle("is-active", idx === current));
+  nav.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => setOpen(false));
+  });
 
-    function setActive(next) {
-      const clamped = ((next % slides.length) + slides.length) % slides.length;
-      slides.forEach((s, idx) => s.classList.toggle("is-active", idx === clamped));
-      current = clamped;
-    }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
+  });
 
-    if (prefersReducedMotion) return;
-    const timer = window.setInterval(() => setActive(current + 1), intervalMs);
-    container.dataset.timer = String(timer);
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!(target instanceof Node)) return;
+    if (!header.contains(target)) setOpen(false);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 961px)").matches) setOpen(false);
   });
 }
 
@@ -92,7 +103,7 @@ function setupDatedListColors() {
 
 function init() {
   setupDropdowns();
-  setupSlideshow();
+  setupMobileNav();
   setupDatedListColors();
 }
 
@@ -101,4 +112,3 @@ if (document.readyState === "loading") {
 } else {
   init();
 }
-
