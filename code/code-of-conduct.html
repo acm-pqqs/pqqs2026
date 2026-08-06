@@ -13,6 +13,9 @@
           var looksLikeFile = /\.html?$/i.test(first);
           if (!looksLikeFile && !siteTop[first]) {
             basePath = "/" + first + "/";
+            if (segs.length > 1 && segs[1] === "staging") {
+              basePath += "staging/";
+            }
           }
         }
         document.write('<base href="' + basePath + '">');
@@ -40,13 +43,26 @@
             <span class="brand-title">ACM PQQS 2026</span>
           </a>
 
-          <ul class="nav-links" role="list">
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="primary-nav"
+            aria-expanded="false"
+          >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+          </button>
+
+          <ul class="nav-links" id="primary-nav" role="list">
             <li class="nav-item dropdown">
               <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
                 Papers
               </button>
               <ul class="dropdown-menu" role="list">
                 <li><a class="dropdown-link" href="call-for/call-for-papers.html">Call for Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/call-for-poster-demo.html">Call for Poster &amp; Demo Papers</a></li>
                 <li><a class="dropdown-link" href="call-for/important-dates.html">Important Dates</a></li>
               </ul>
             </li>
@@ -57,7 +73,10 @@
               </button>
               <ul class="dropdown-menu" role="list">
                 <li><a class="dropdown-link" href="participants/registration.html">Registration</a></li>
-                <li><a class="dropdown-link" href="participants/venue-travel.html">Conference Venue &amp; Travel</a></li>
+                <li><a class="dropdown-link" href="participants/visa.html">Visa</a></li>
+                <li><a class="dropdown-link" href="participants/venue.html">Venue</a></li>
+                <li><a class="dropdown-link" href="participants/travel.html">Travel Information</a></li>
+                <li><a class="dropdown-link" href="participants/travel-grants.html">Travel Grants for Students</a></li>
               </ul>
             </li>
 
@@ -119,12 +138,7 @@
           </div>
         </div>
 
-        <div class="slideshow" aria-label="San Jose slideshow">
-          <div class="slide is-active" style="--bg: url('assets/new-0.jpg');"></div>
-          <div class="slide" style="--bg: url('assets/new-2.jpg');"></div>
-          <div class="slide" style="--bg: url('assets/new-3.jpg');"></div>
-          <div class="slide" style="--bg: url('assets/new-4.jpg');"></div>
-        </div>
+        <div class="hero-media" aria-hidden="true" style="--bg: url('assets/new-0.jpg');"></div>
       </section>
 
       <section class="content">
