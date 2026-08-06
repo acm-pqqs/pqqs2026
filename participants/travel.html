@@ -13,9 +13,6 @@
           var looksLikeFile = /\.html?$/i.test(first);
           if (!looksLikeFile && !siteTop[first]) {
             basePath = "/" + first + "/";
-            if (segs.length > 1 && segs[1] === "staging") {
-              basePath += "staging/";
-            }
           }
         }
         document.write('<base href="' + basePath + '">');
