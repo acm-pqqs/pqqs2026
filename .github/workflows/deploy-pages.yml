@@ -1,3 +1,11 @@
+# Deploys via git push to the gh-pages branch (peaceiris).
+# This avoids actions/deploy-pages, which has been stuck in
+# deployment_queued for ~10 minutes on this repo and others (2026).
+#
+# After the first successful run, set Pages source to:
+#   Settings → Pages → Build and deployment → Deploy from a branch
+#   Branch: gh-pages / (root)
+
 name: Deploy GitHub Pages
 
 on:
@@ -7,23 +15,18 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
 
       - name: Prepare site files
         run: |
@@ -34,18 +37,11 @@ jobs:
             --exclude '_site' \
             ./ _site/
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: _site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          force_orphan: true
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
