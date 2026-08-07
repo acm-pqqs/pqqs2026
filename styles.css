@@ -728,10 +728,10 @@ a.sponsor-card:focus-visible {
 
 .speaker-photo {
   float: right;
-  width: 220px;
-  height: 275px;
-  max-width: 42%;
-  margin: 0 0 16px 28px;
+  width: 280px;
+  height: 350px;
+  max-width: 46%;
+  margin: 0 0 18px 32px;
   object-fit: cover;
   object-position: center top;
   border-radius: 14px;
@@ -739,14 +739,20 @@ a.sponsor-card:focus-visible {
 }
 
 .speaker-details h3 {
-  margin: 0 0 12px;
-  letter-spacing: -0.2px;
+  margin: 0 0 14px;
+  font-size: 1.7rem;
+  letter-spacing: -0.3px;
   color: var(--text);
 }
 
 .speaker-details p {
+  margin: 0 0 14px;
   text-align: justify;
   hyphens: auto;
+}
+
+.speaker-details p:last-child {
+  margin-bottom: 0;
 }
 
 .speaker-coming-soon {
@@ -1008,11 +1014,15 @@ a.sponsor-card:focus-visible {
   .speaker-photo {
     float: none;
     display: block;
-    width: min(220px, 100%);
+    width: min(280px, 100%);
     max-width: 100%;
     height: auto;
-    aspect-ratio: 220 / 275;
+    aspect-ratio: 280 / 350;
     margin: 0 auto 16px;
+  }
+
+  .speaker-details h3 {
+    font-size: 1.45rem;
   }
 
   .home-dual-grid {
