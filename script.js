@@ -98,6 +98,7 @@ function setupDatedListColors() {
     const date = new Date(parts[0], parts[1] - 1, parts[2]);
     date.setHours(0, 0, 0, 0);
     el.classList.toggle("is-past", date < today);
+    el.closest("li")?.classList.toggle("is-past", date < today);
   });
 }
 

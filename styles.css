@@ -465,6 +465,12 @@ section[id] {
   color: var(--date-past);
 }
 
+.dated-list-deadlines li.is-past .dated-list-date,
+.dated-list-deadlines li.is-past .dated-list-text {
+  text-decoration: line-through;
+  color: var(--date-past);
+}
+
 .dated-list-text {
   flex: 1;
   min-width: 0;
