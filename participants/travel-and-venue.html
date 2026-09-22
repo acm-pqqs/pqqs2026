@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var segs = location.pathname.split("/").filter(Boolean);
+        var basePath = "/";
+        if (segs.length > 0) {
+          var first = segs[0];
+          var siteTop = { "call-for": 1, code: 1, participants: 1, team: 1, assets: 1 };
+          var looksLikeFile = /\.html?$/i.test(first);
+          if (!looksLikeFile && !siteTop[first]) {
+            basePath = "/" + first + "/";
+          }
+        }
+        document.write('<base href="' + basePath + '">');
+      })();
+    </script>
+    <title>Travel and Venue — ACM PQQS 2026</title>
+    <meta name="description" content="Travel, venue, hotel, and local information for ACM PQQS 2026." />
+    <link rel="icon" type="image/png" href="assets/CCS-logo.png" />
+    <link rel="apple-touch-icon" href="assets/CCS-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="top-nav" aria-label="Primary">
+        <div class="nav-left">
+          <a class="brand" href="index.html" aria-label="ACM PQQS 2026 Home">
+            <span class="brand-title">ACM PQQS 2026</span>
+          </a>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="primary-nav"
+            aria-expanded="false"
+          >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+          </button>
+
+          <ul class="nav-links" id="primary-nav" role="list">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Papers
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/call-for-papers.html">Call for Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/call-for-poster-demo.html">Call for Poster &amp; Demo Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/important-dates.html">Important Dates</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Attend
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="participants/registration.html">Registration</a></li>
+                <li>
+                  <a class="dropdown-link" href="participants/travel-and-venue.html" aria-current="page"
+                    >Travel and Venue</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-link"
+                    href="https://supportletters.acm.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Visa Support Letters</a
+                  >
+                </li>
+                <li><a class="dropdown-link" href="participants/travel-grants.html">Travel Grants for Students</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Sponsorship
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/call-for-sponsorship.html">Call for Sponsorship</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Speakers
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/keynote-speaker.html">Keynote Speakers</a></li>
+                <li><a class="dropdown-link" href="team/invited-speaker.html">Invited Speakers</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Organizing Committees
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/program-committee.html">Program Committee</a></li>
+                <li><a class="dropdown-link" href="team/organizing-committee.html">Organizing Committee</a></li>
+                <li><a class="dropdown-link" href="team/steering-committee.html">Steering Committee</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Code
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="code/code-of-conduct.html">Code of Conduct</a></li>
+                <li><a class="dropdown-link" href="code/diversity-and-inclusion.html">Diversity and Inclusion</a></li>
+                <li><a class="dropdown-link" href="code/acm-open-access-policy.html">ACM Open-Access Policy</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section id="home" class="hero" aria-label="Conference hero">
+        <div class="hero-overlay" role="presentation">
+          <div class="hero-overlay-inner">
+            <img class="hero-logo" src="assets/CCS-logo.png" alt="ACM SIGSAC logo" loading="eager" decoding="async" />
+            <p class="hero-kicker">ACM Conference on Post-Quantum and Quantum-based Security</p>
+            <h1 class="hero-title">ACM PQQS 2026</h1>
+            <p class="hero-meta">
+              <span class="hero-meta-item">November 2–4, 2026</span>
+              <span class="hero-meta-dot" aria-hidden="true">•</span>
+              <span class="hero-meta-item">San Jose, CA, USA</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-hidden="true" style="--bg: url('assets/new-0.jpg');"></div>
+      </section>
+
+      <section class="content">
+        <section class="section">
+          <div class="section-header">
+            <h2>Travel and Venue</h2>
+            <p class="section-subtitle">Venue, hotel, travel, and local information for ACM PQQS 2026.</p>
+          </div>
+
+          <div class="card">
+            <h3>Venue and Location</h3>
+            <p>
+              The inaugural ACM Conference on Post-Quantum and Quantum-based Security (PQQS&rsquo;26) will take place from
+              November 2&ndash;4, 2026.
+            </p>
+            <p>
+              <strong>Conference Venue &amp; Official Hotel:</strong>
+              <a
+                href="https://www.hilton.com/en/hotels/milcaes-embassy-suites-milpitas-silicon-valley/?SEO_id=GMB-AMER-ES-MILCAES"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Embassy Suites by Hilton Milpitas Silicon Valley</a
+              >
+            </p>
+            <p>
+              <strong>Address:</strong> 901 East Calaveras Boulevard, Milpitas, CA 95035, USA
+            </p>
+            <div class="map-embed" aria-label="Map">
+              <iframe
+                title="Embassy Suites by Hilton Milpitas Silicon Valley map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Embassy%20Suites%20by%20Hilton%20Milpitas%20Silicon%20Valley%2C%20901%20East%20Calaveras%20Boulevard%2C%20Milpitas%2C%20CA%2095035%2C%20USA&output=embed"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <p>
+              <a
+                href="https://www.google.com/maps?q=Embassy%20Suites%20by%20Hilton%20Milpitas%20Silicon%20Valley%2C%20901%20East%20Calaveras%20Boulevard%2C%20Milpitas%2C%20CA%2095035%2C%20USA"
+                target="_blank"
+                rel="noreferrer"
+              >
+                View larger map
+              </a>
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Conference Registration</h3>
+            <p>
+              Registration for PQQS&rsquo;26 is now open. Please visit the
+              <a href="https://cvent.me/4v1DoP" target="_blank" rel="noopener noreferrer">registration portal</a>
+              to secure your spot. Fee details are also listed on the
+              <a href="participants/registration.html">Registration</a> page.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Accommodation and Discounted Hotel Rates</h3>
+            <p>
+              We have secured a limited block of rooms at the conference venue (Embassy Suites by Hilton Milpitas) at a
+              special discounted group rate exclusively for PQQS&rsquo;26 attendees. The block covers dates from November
+              1&ndash;5, 2026.
+            </p>
+            <p>
+              <strong>Booking link:</strong>
+              <a
+                href="https://www.hilton.com/en/book/reservation/rooms/?ctyhocn=MILCAES&amp;arrivalDate=2026-11-01&amp;departureDate=2026-11-05&amp;groupCode=CES90O&amp;room1NumAdults=1&amp;cid=OM%2CWW%2CHILTONLINK%2CEN%2CDirectLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Book your discounted room</a
+              >
+            </p>
+            <p>
+              <strong>Cut-off date:</strong> You have until <strong>October 11, 2026</strong> to book using this link at
+              the special discounted rate. Rooms are limited, so we encourage you to book early.
+            </p>
+            <p>
+              <strong>Cancellation policy:</strong> Individual reservations are cancellable up to 72 hours before
+              arrival. Any cancellation made after this 72-hour deadline will result in a penalty of one (1) night&rsquo;s
+              room and tax.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>How to Travel to the Venue</h3>
+            <p>
+              Milpitas is centrally located in Silicon Valley, making it highly accessible for both domestic and
+              international travelers.
+            </p>
+            <p><strong>Air travel</strong></p>
+            <ul>
+              <li>
+                The closest and most convenient airport is
+                <strong>Norman Y. Mineta San Jose International Airport (SJC)</strong>, located about 7 miles (15
+                minutes) from the hotel.
+              </li>
+              <li>
+                Alternatively, attendees can fly into <strong>San Francisco International Airport (SFO)</strong>
+                (approx. 40 minutes away) or <strong>Oakland International Airport (OAK)</strong> (approx. 35 minutes
+                away).
+              </li>
+            </ul>
+            <p><strong>Ground transportation</strong></p>
+            <ul>
+              <li>
+                From SJC, the easiest way to reach the venue is via ride-sharing services (Uber, Lyft) or standard
+                taxis.
+              </li>
+              <li>
+                <strong>Public transit:</strong> The hotel is located near the Milpitas Transit Center, which connects
+                to the BART system (offering easy access from SFO and OAK airports) and the VTA light rail network.
+              </li>
+              <li>
+                <strong>Parking:</strong> If you are driving, parking is available at the hotel.
+              </li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Visa Information for International Attendees</h3>
+            <p>
+              PQQS&rsquo;26 welcomes researchers and practitioners from around the globe. If you require a visa to travel
+              to the United States, ACM will work on providing a visa support letter.
+            </p>
+            <p><strong>How to obtain a visa support letter:</strong></p>
+            <p>
+              You must submit a request for a &ldquo;visa support letter&rdquo; through the link in the
+              <a href="https://cvent.me/4v1DoP" target="_blank" rel="noopener noreferrer">ACM PQQS26 registration portal</a>.
+            </p>
+            <p>
+              Please allow up to 7&ndash;10 business days for processing. We strongly advise international attendees to
+              begin the visa application process as early as possible.
+            </p>
+
+            <p><strong>ACM Visa Support Letter Requests</strong></p>
+            <p>
+              The Association for Computing Machinery does not issue formal invitation letters for visas to attend ACM
+              sponsored conferences. We can however issue a visa support letter.
+            </p>
+            <p>
+              ACM is able to provide visa support letters to attendees as well as authors with accepted papers, posters,
+              or members of the conference committee.
+            </p>
+            <p>
+              If you are a recipient of ACM, SIG, or Conference funded travel grant, please include this information in
+              your request.
+            </p>
+            <p>
+              For visa support letters, please complete the following request online:
+              <a href="https://supportletters.acm.org/" target="_blank" rel="noopener noreferrer"
+                >https://supportletters.acm.org/</a
+              >. Please allow up to 10 business days to receive a letter. All requests are handled in the order they are
+              received. The information below should be included with the request:
+            </p>
+            <ul>
+              <li>Your name as it appears on your passport</li>
+              <li>Your current postal mailing address</li>
+              <li>
+                The name of the conference you are registering for. Only accepted authors may request a visa support
+                letter prior to registering for the conference.
+              </li>
+              <li>Your registration confirmation number</li>
+              <li>
+                If you have any papers accepted for the conference, please provide the title and indicate whether you are
+                the &ldquo;sole author&rdquo; or a &ldquo;co-author&rdquo;
+              </li>
+              <li>
+                Authors may indicate their paper title. If no paper, speakers can provide the title of their
+                presentation.
+              </li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Local Attractions and Area Information</h3>
+            <p>
+              Milpitas and the surrounding Silicon Valley area offer a wealth of dining, shopping, and technological
+              attractions.
+            </p>
+            <ul>
+              <li>
+                <strong>The Great Mall:</strong> Located just minutes from the hotel, this is the largest indoor outlet
+                and value shopping destination in Northern California, featuring extensive dining options.
+              </li>
+              <li>
+                <strong>Silicon Valley tech campuses:</strong> You are a short drive from the headquarters of major tech
+                companies and the Computer History Museum in Mountain View.
+              </li>
+              <li>
+                <strong>Downtown San Jose:</strong> Just a few light-rail stops away, offering the Tech Interactive
+                museum, San Pedro Square Market, and vibrant nightlife.
+              </li>
+            </ul>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Contact Information</h3>
+            <p>
+              For any questions regarding registration, travel, venue, or accommodations, please contact the Local
+              Arrangements team at
+              <a href="mailto:pqqs26-localchairs@acm.org"><strong>pqqs26-localchairs@acm.org</strong></a>
+              with the subject line: &ldquo;PQQS 2026 Travel/Venue Inquiry&rdquo;.
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 ACM PQQS. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
