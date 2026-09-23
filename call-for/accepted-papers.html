@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var segs = location.pathname.split("/").filter(Boolean);
+        var basePath = "/";
+        if (segs.length > 0) {
+          var first = segs[0];
+          var siteTop = { "call-for": 1, code: 1, participants: 1, team: 1, assets: 1 };
+          var looksLikeFile = /\.html?$/i.test(first);
+          if (!looksLikeFile && !siteTop[first]) {
+            basePath = "/" + first + "/";
+          }
+        }
+        document.write('<base href="' + basePath + '">');
+      })();
+    </script>
+    <title>Accepted Papers — ACM PQQS 2026</title>
+    <meta name="description" content="Accepted papers for ACM PQQS 2026." />
+    <link rel="icon" type="image/png" href="assets/CCS-logo.png" />
+    <link rel="apple-touch-icon" href="assets/CCS-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="top-nav" aria-label="Primary">
+        <div class="nav-left">
+          <a class="brand" href="index.html" aria-label="ACM PQQS 2026 Home">
+            <span class="brand-title">ACM PQQS 2026</span>
+          </a>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="primary-nav"
+            aria-expanded="false"
+          >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+          </button>
+
+          <ul class="nav-links" id="primary-nav" role="list">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Technical Program
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/accepted-papers.html" aria-current="page">Accepted Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/call-for-papers.html">Call for Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/call-for-poster-demo.html">Call for Poster &amp; Demo Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/important-dates.html">Important Dates</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Attend
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="participants/registration.html">Registration</a></li>
+                <li><a class="dropdown-link" href="participants/travel-and-venue.html">Travel and Venue</a></li>
+                <li><a class="dropdown-link" href="https://supportletters.acm.org/" target="_blank" rel="noopener noreferrer">Visa Support Letters</a></li>
+                <li><a class="dropdown-link" href="participants/travel-grants.html">Travel Grants for Students</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Sponsorship
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/call-for-sponsorship.html">Call for Sponsorship</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Speakers
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/keynote-speaker.html">Keynote Speakers</a></li>
+                <li><a class="dropdown-link" href="team/invited-speaker.html">Invited Speakers</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Organizing Committees
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/program-committee.html">Program Committee</a></li>
+                <li><a class="dropdown-link" href="team/organizing-committee.html">Organizing Committee</a></li>
+                <li><a class="dropdown-link" href="team/steering-committee.html">Steering Committee</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">Code</button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="code/code-of-conduct.html">Code of Conduct</a></li>
+                <li><a class="dropdown-link" href="code/diversity-and-inclusion.html">Diversity and Inclusion</a></li>
+                <li><a class="dropdown-link" href="code/acm-open-access-policy.html">ACM Open-Access Policy</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section id="home" class="hero" aria-label="Conference hero">
+        <div class="hero-overlay" role="presentation">
+          <div class="hero-overlay-inner">
+            <img class="hero-logo" src="assets/CCS-logo.png" alt="ACM SIGSAC logo" loading="eager" decoding="async" />
+            <p class="hero-kicker">ACM Conference on Post-Quantum and Quantum-based Security</p>
+            <h1 class="hero-title">ACM PQQS 2026</h1>
+            <p class="hero-meta">
+              <span class="hero-meta-item">November 2–4, 2026</span>
+              <span class="hero-meta-dot" aria-hidden="true">•</span>
+              <span class="hero-meta-item">San Jose, CA, USA</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-hidden="true" style="--bg: url('assets/new-0.jpg');"></div>
+      </section>
+
+      <section class="content">
+        <section class="section">
+          <div class="section-header">
+            <h2>Accepted Papers</h2>
+            <p class="section-subtitle">Papers accepted for presentation at ACM PQQS 2026.</p>
+          </div>
+          <div class="card">
+            <ol class="accepted-papers-list" aria-label="Accepted Papers">
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">QUAPLA : a library for quantum exact linear algebra</p>
+                <p class="accepted-paper-authors">Ulysse Dupont-Latapie, Ludovic Perret</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">NTRU Fatigue with Sparse Secrets: From Lattice Geometry to Attack Cost</p>
+                <p class="accepted-paper-authors">WunTing Lin, Ja-Ling Wu</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">A Note on the Security Proof of SQIsign</p>
+                <p class="accepted-paper-authors">Maher Mamah, David Jao</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Certified Confinement: Kernel-Checked Multi-Tenant Isolation for Untrusted Quantum-Cloud Compilation</p>
+                <p class="accepted-paper-authors">Ali Hamza Malik, Taqi Raza</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">DUOV: A Dressing in Advance for Threshold UOV with Pre-signing</p>
+                <p class="accepted-paper-authors">Elouan Gros, Dayane Horkos, River Moreira-Ferreira, Ludovic Perret</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">A polynomial-time key recovery attack on Facto-DSA</p>
+                <p class="accepted-paper-authors">Simon Abelard, Ludovic Perret, Hao Shi</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Cryptographic Migration with Implicit Dependencies</p>
+                <p class="accepted-paper-authors">Eunisse Nzetchuen, Marc Stöttinger, Bodo Igler, Daniel Loebenberger</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Multi-client Delegated Verifiable Blind Quantum Computing</p>
+                <p class="accepted-paper-authors">Matthew Prest, Rosario Gennaro</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">QuantumScouter: Reinforcement Learning-Based Optimization of Variational Quantum Circuits for Differential Cryptanalysis</p>
+                <p class="accepted-paper-authors">Gilsang Ahn, Jiwoo Baek, Donggun Lee, Insung Kim, Changmin Lee, Seokhie Hong, Dongjae Lee, Jiwoo Baek</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Fuzzing, Auditing, and Formally Verifying Stateful Hash-Based Signature Verification in liboqs</p>
+                <p class="accepted-paper-authors">Vishnu Ajith, Muhammad Ibrahim, Muhammed Sihan Haroon, Dr. Rajagopal Nagarajan</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Toward Practical Post-Quantum Cryptography Migration: Lessons from a Central Bank&#x27;s Crypto-Agility Experiments</p>
+                <p class="accepted-paper-authors">Tanakorn Kerdrattikal, Pontakorn Mekintarangkoon, Prempoon Srimonta, Peerapong Thonnagith, Jakkapong Pansit, Kittipos Giatgong</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Towards Deployable Single-Click Quantum Key Distribution: A System-Level Analysis for Practical Quantum Networks</p>
+                <p class="accepted-paper-authors">Valeria Saggio, Maria Mendes, Costin Luchian, Julius Piso, Alessandro Trenti, Hannes Hübel</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Hybrid Quantum–Computational Key Distribution with Reduced Assumptions</p>
+                <p class="accepted-paper-authors">Jean Snyman, Ioana Boureanu, Daniel Gardham</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Enclave-Anchored Hybrid Quantum-Safe Key Exchange for Untrusted Platforms</p>
+                <p class="accepted-paper-authors">Wassim Yahyaoui, Matteo Steinbach, Jordan NACCACHE, Johann Großschädl, Peter ROENNE</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Direct information lower bounds for one-way communication complexity problems: Applications to the demonstration of an unconditional quantum advantage and to cryptography</p>
+                <p class="accepted-paper-authors">Gabriel Blanchot, Francesco Mazzoncini, Romain Alléaume, Philippe Gaborit, Francesco Mazzoncini</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Sequential vs. Synchronized Entanglement Swapping: QKD Secret-Key Rate under Optimized Link-Layer Control</p>
+                <p class="accepted-paper-authors">Priyam Srivastava, Akshat R. Sabavat, Siddharth Jain, Alan Scheller-Wolf, Sridhar Tayur, David Tipper, Prashant Krishnamurthy, Amy Babay, Kaushik Seshadreesan</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">A Practical Post-Quantum Distributed Ledger Protocol for Financial Institutions</p>
+                <p class="accepted-paper-authors">Yeoh Wei Zhu, Naresh Goud Boddu, Yao Ma, Shaltiel Eloul, Giulio Golinelli, Yash Satsangi, Rob Otter, Kauhsik Chakraborty</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">A quantum algorithm for one-shot signatures</p>
+                <p class="accepted-paper-authors">Gopikrishnan Muraleedharan, Minh Thuy Truc Pham, Vir Pathak, Thomas Gardner, Chuanqi Zhang, QPerfect, Gavin K. Brennen</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">PQC-rs: Principled Design and Continuous Assurance for Post-Quantum Cryptography in Rust</p>
+                <p class="accepted-paper-authors">Ro Cammarota, Caroline Wang</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Pinpointing Super-Quadratic Quantum Enumeration Speedups: Exact and Certified Evaluation of the Guessing-Moment Exponent under Product-Distribution Advice</p>
+                <p class="accepted-paper-authors">Carsten Schubert, Niklas Paskarbeit, Maximilian J. Kramer, Jean-Pierre Seifert, Marian Margraf</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">SoK: Stablecoins in the Quantum Era</p>
+                <p class="accepted-paper-authors">Panagiotis Chatzigiannis , Duc V. Le, Navid Alamati, Suvradip Chakraborty, Suvradip Chakraborty</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">On linearly derived quantum samples for LWE</p>
+                <p class="accepted-paper-authors">Niklas Pirnay, Jean-Pierre Seifert</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Tangent Spaces of UOV and MAYO</p>
+                <p class="accepted-paper-authors">Toshihiro Suzuki, Takuma Ito, Shigenori Uchiyama, Toshihiro Suzuki</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Practical Post-Quantum Secure Publicly Verifiable Secret Sharing and Applications</p>
+                <p class="accepted-paper-authors">Aniket Kate, Pratyay Mukherjee, Hamza Saleem, Pratik Sarkar, Rohit Sinha</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">What Happens Before the Hash? Layer-Aware Statistical Testing in a Live QKD Pipeline</p>
+                <p class="accepted-paper-authors">Darshit Suratwala, Matvey Romanowski, Orr Dunkelman, Elham Amini, Jean-Pierre Seifert</p>
+              </li>
+              <li class="accepted-paper">
+                <p class="accepted-paper-title">Stealing Variational Secrets from Quantum Clouds: Physical QAOA Parameter Recovery and Exact Isolation Capacity</p>
+                <p class="accepted-paper-authors">José Luis Delgado</p>
+              </li>
+            </ol>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 ACM PQQS. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
