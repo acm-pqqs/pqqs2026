@@ -18,8 +18,8 @@
         document.write('<base href="' + basePath + '">');
       })();
     </script>
-    <title>Keynote Speakers — ACM PQQS 2026</title>
-    <meta name="description" content="Keynote speaker information for ACM PQQS 2026." />
+    <title>Panels — ACM PQQS 2026</title>
+    <meta name="description" content="Panel sessions and panelists for ACM PQQS 2026." />
     <link rel="icon" type="image/png" href="assets/CCS-logo.png" />
     <link rel="apple-touch-icon" href="assets/CCS-logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -69,9 +69,9 @@
                 Speakers
               </button>
               <ul class="dropdown-menu" role="list">
-                <li><a class="dropdown-link" href="team/keynote-speaker.html" aria-current="page">Keynote Speakers</a></li>
+                <li><a class="dropdown-link" href="team/keynote-speaker.html">Keynote Speakers</a></li>
                 <li><a class="dropdown-link" href="team/invited-speaker.html">Invited Speakers</a></li>
-                <li><a class="dropdown-link" href="team/panels.html">Panels</a></li>
+                <li><a class="dropdown-link" href="team/panels.html" aria-current="page">Panels</a></li>
               </ul>
             </li>
 
@@ -145,127 +145,73 @@
       <section class="content">
         <section class="section">
           <div class="section-header">
-            <h2>Keynote Speakers</h2>
+            <h2>Panels</h2>
           </div>
 
-          <div class="speaker-list">
-            <div class="card">
-              <article class="speaker-profile">
-                <div class="speaker-details">
-                  <h3>Dr. Renato Renner</h3>
-                  <img
-                    class="speaker-photo"
-                    src="assets/renato-renner.png"
-                    alt="Portrait of Dr. Renato Renner"
-                    width="220"
-                    height="275"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <p>
-                    Renato Renner is a Professor for Theoretical Physics in the Physics Department at ETH Zurich, where
-                    he leads research exploring the intersections of quantum information science and fundamental physics.
-                    His research interests span quantum information, quantum cryptography, and the foundations of quantum
-                    theory and general relativity. Renato studied physics at EPF Lausanne and ETH Zurich, graduating from
-                    the latter, and earned his PhD from the Department of Computer Science in 2005, focusing on quantum
-                    cryptography and the security of Quantum Key Distribution. Following his doctoral work, he spent two
-                    years as a postdoctoral researcher in the Department of Applied Mathematics and Theoretical Physics
-                    at the University of Cambridge. He returned to ETH Zurich in 2007 to start his own research group in
-                    Quantum Information Theory, where he has been a Full Professor since 2015.
-                  </p>
-                </div>
-              </article>
-            </div>
+          <div class="card">
+            <h3>The Transition to Quantum-Safe Security: Technical and Societal Challenges</h3>
+            <p class="section-subtitle" style="margin-top: 0.5rem; margin-bottom: 1.25rem">Panelists</p>
 
-            <div class="card">
-              <article class="speaker-profile">
+            <div class="speaker-list">
+              <article class="speaker-profile speaker-profile--lg">
                 <div class="speaker-details">
-                  <h3>Dr. Dan Boneh</h3>
+                  <h3>Dr. Dustin Moody</h3>
                   <img
                     class="speaker-photo"
-                    src="https://crypto.stanford.edu/~dabo/DanBonehPictures/DaBo.jpg"
-                    alt="Portrait of Dr. Dan Boneh"
+                    src="assets/dustin-moody.jpg"
+                    alt="Portrait of Dr. Dustin Moody"
                     width="220"
                     height="275"
                     loading="lazy"
                     decoding="async"
                   />
+                  <p><strong>Affiliation:</strong> National Institute of Standards and Technology (NIST)</p>
                   <p>
-                    Dan Boneh is a professor of Computer Science at Stanford University where he heads the applied
-                    cryptography group and co-direct the computer security lab. Professor Boneh's research focuses on
-                    applications of cryptography to computer security. His work includes cryptosystems with novel
-                    properties, post-quantum cryptography, applications of cryptography to blockchains, and cryptanalysis.
-                    He is a recipient of the 2014 ACM prize and is a member of the National Academy of Engineering.
-                    Professor Boneh received his Ph.D from Princeton University.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <div class="card">
-              <article class="speaker-profile">
-                <div class="speaker-details">
-                  <h3>Dr. Ramana Kompella</h3>
-                  <img
-                    class="speaker-photo"
-                    src="assets/ramana-kompella.png"
-                    alt="Portrait of Dr. Ramana Kompella"
-                    width="220"
-                    height="275"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <p>
-                    Ramana Kompella is currently a Cisco Fellow and Head of Cisco Research, where he leads a team of
-                    world-class researchers conducting research on emerging technologies of strategic interest to Cisco
-                    such as AI/ML, Quantum, Networking, and Cybersecurity. In his past experience, he was a co-founder and
-                    led engineering at Candid Alpha project that built the network assurance engine (NAE) for formal
-                    verification of data center networks. Past roles also include staff network architect at Google, and
-                    also co-founder/CTO at AppFormix (acquired by Juniper). Before that, he was a tenured Associate
-                    Professor at Purdue in the CS department where he led research on networking and systems. He holds a
-                    PhD degree from UCSD, MS from Stanford and BTech degree from IIT Bombay, all in Computer Science.
-                  </p>
-                </div>
-              </article>
-            </div>
-
-            <div class="card">
-              <article class="speaker-profile">
-                <div class="speaker-details">
-                  <h3>Dr. Ryan Babbush</h3>
-                  <img
-                    class="speaker-photo"
-                    src="assets/ryan-babbush.png"
-                    alt="Portrait of Dr. Ryan Babbush"
-                    width="220"
-                    height="275"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <p><strong>Affiliation:</strong> Google Quantum AI</p>
-                  <p>
-                    <strong>Talk title:</strong> The impending threat of quantum cryptanalysis
-                  </p>
-                  <p>
-                    <strong>Abstract:</strong> This talk will cover recent developments in quantum algorithms for
-                    breaking elliptic curve cryptography and how these developments intersect with advances in quantum
-                    hardware and quantum error-correction. We will also explain the unique threat these capabilities
-                    pose to blockchains and hardware root of trust, and outline the steps the community can take to
-                    mitigate these vulnerabilities.
-                  </p>
-                  <p>
-                    <strong>Biography:</strong> Ryan Babbush is the director of quantum algorithms and applications
-                    research within Google&rsquo;s quantum computing effort, Quantum AI. Ryan has worked with Quantum AI
-                    since its founding in 2013 and joined the effort full time in 2015 after receiving his PhD in
-                    Chemical Physics from Harvard University. Ryan&rsquo;s team broadly focuses on quantum algorithms
-                    with applications ranging from machine learning, optimization, and differential equations to
-                    cryptography.
+                    <strong>Biography:</strong> Dr. Dustin Moody is a mathematician in the Computer Security Division of
+                    the National Institute of Standards and Technology. Dr. Moody leads the Post-Quantum Cryptography
+                    project at NIST. He received his Ph.D. from the University of Washington in 2009. His area of
+                    research deals with elliptic curves, and their applications in cryptography.
                   </p>
                 </div>
               </article>
             </div>
           </div>
 
+          <div style="height: 1.25rem" aria-hidden="true"></div>
+
+          <div class="card">
+            <div class="speaker-list">
+              <article class="speaker-profile speaker-profile--lg">
+                <div class="speaker-details">
+                  <h3>Dr. Michele Mosca</h3>
+                  <img
+                    class="speaker-photo"
+                    src="assets/michele-mosca.jpg"
+                    alt="Portrait of Dr. Michele Mosca"
+                    width="220"
+                    height="275"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <p>
+                    <strong>Affiliation:</strong> Institute for Quantum Computing, University of Waterloo; evolutionQ
+                  </p>
+                  <p>
+                    <strong>Biography:</strong> Dr. Michele Mosca is a pioneer in quantum computing and cybersecurity who
+                    has helped shape the global quantum and quantum-safe technology ecosystem. He initiated the quantum
+                    computing effort at the University of Waterloo in 1999 and was a principal architect of its
+                    development into the Institute for Quantum Computing (IQC), helping establish one of the world&rsquo;s
+                    leading quantum research and innovation ecosystems. He is a founding member of Perimeter Institute
+                    and co-founder and CEO of evolutionQ. His work spans foundational quantum computing research,
+                    quantum-safe cybersecurity, talent development, commercialization, standards leadership, and
+                    international policy engagement. He has helped create or grow initiatives including Open Quantum Safe,
+                    the ETSI-IQC Quantum-Safe Cryptography Conference, Quantum-Safe Canada, Quantum Industry Canada,
+                    QCSYS/QSYS, and CryptoWorks21.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
         </section>
       </section>
     </main>
