@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var segs = location.pathname.split("/").filter(Boolean);
+        var basePath = "/";
+        if (segs.length > 0) {
+          var first = segs[0];
+          var siteTop = { "call-for": 1, code: 1, participants: 1, team: 1, assets: 1 };
+          var looksLikeFile = /\.html?$/i.test(first);
+          if (!looksLikeFile && !siteTop[first]) {
+            basePath = "/" + first + "/";
+          }
+        }
+        document.write('<base href="' + basePath + '">');
+      })();
+    </script>
+    <title>Demo Preparation Guidelines — ACM PQQS 2026</title>
+    <meta name="description" content="Demo preparation and demo video guidelines for ACM PQQS 2026." />
+    <link rel="icon" type="image/png" href="assets/CCS-logo.png" />
+    <link rel="apple-touch-icon" href="assets/CCS-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="top-nav" aria-label="Primary">
+        <div class="nav-left">
+          <a class="brand" href="index.html" aria-label="ACM PQQS 2026 Home">
+            <span class="brand-title">ACM PQQS 2026</span>
+          </a>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="primary-nav"
+            aria-expanded="false"
+          >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+          </button>
+
+          <ul class="nav-links" id="primary-nav" role="list">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Technical Program
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/accepted-papers.html">Accepted Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/accepted-posters-demos.html">Accepted Posters and Demos</a></li>
+                <li><a class="dropdown-link" href="call-for/detailed-program.html">Detailed Program</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Speakers
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/keynote-speaker.html">Keynote Speakers</a></li>
+                <li><a class="dropdown-link" href="team/invited-speaker.html">Invited Speakers</a></li>
+                <li><a class="dropdown-link" href="team/panels.html">Panels</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Attend
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="participants/registration.html">Registration</a></li>
+                <li><a class="dropdown-link" href="participants/travel-and-venue.html">Travel and Venue</a></li>
+                <li><a class="dropdown-link" href="https://supportletters.acm.org/" target="_blank" rel="noopener noreferrer">Visa Support Letters</a></li>
+                <li><a class="dropdown-link" href="participants/travel-grants.html">Travel Grants for Students</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Call for
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/call-for-papers.html">Call for Papers</a></li>
+                <li>
+                  <a class="dropdown-link dropdown-link--nested" href="call-for/camera-ready-instructions.html"
+                    >Camera-Ready Instructions</a
+                  >
+                </li>
+                <li><a class="dropdown-link" href="call-for/call-for-poster-demo.html">Call for Poster &amp; Demo Papers</a></li>
+                <li>
+                  <a class="dropdown-link dropdown-link--nested" href="call-for/poster-preparation-guidelines.html"
+                    >Poster Preparation Guidelines</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-link dropdown-link--nested" href="call-for/demo-preparation-guidelines.html" aria-current="page"
+                    >Demo Preparation Guidelines</a
+                  >
+                </li>
+                <li><a class="dropdown-link" href="call-for/call-for-sponsorship.html">Call for Sponsorship</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Organizing Committees
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/program-committee.html">Program Committee</a></li>
+                <li><a class="dropdown-link" href="team/organizing-committee.html">Organizing Committee</a></li>
+                <li><a class="dropdown-link" href="team/steering-committee.html">Steering Committee</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Code
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="code/code-of-conduct.html">Code of Conduct</a></li>
+                <li><a class="dropdown-link" href="code/diversity-and-inclusion.html">Diversity and Inclusion</a></li>
+                <li><a class="dropdown-link" href="code/acm-open-access-policy.html">ACM Open-Access Policy</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section id="home" class="hero" aria-label="Conference hero">
+        <div class="hero-overlay" role="presentation">
+          <div class="hero-overlay-inner">
+            <img class="hero-logo" src="assets/CCS-logo.png" alt="ACM SIGSAC logo" loading="eager" decoding="async" />
+            <p class="hero-kicker">ACM Conference on Post-Quantum and Quantum-based Security</p>
+            <h1 class="hero-title">ACM PQQS 2026</h1>
+            <p class="hero-meta">
+              <span class="hero-meta-item">November 2–4, 2026</span>
+              <span class="hero-meta-dot" aria-hidden="true">•</span>
+              <span class="hero-meta-item">San Jose, CA, USA</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-hidden="true" style="--bg: url('assets/new-0.jpg');"></div>
+      </section>
+
+            <section class="content">
+        <section class="section">
+          <div class="section-header">
+            <h2>Demo Preparation and Demo Video Guidelines</h2>
+            <p class="section-subtitle">
+              Guidelines for live demos and recorded demo videos at ACM PQQS 2026.
+            </p>
+          </div>
+
+          <div class="card">
+            <p>
+              Authors of accepted Demo Papers at ACM PQQS 2026 should prepare a live demonstration of their work and a
+              short recorded demo video. The demonstration should focus on showing the system, tool, prototype,
+              implementation, or experimental capability described in the accepted paper.
+            </p>
+            <p>
+              For camera-ready upload requirements (video and optional poster files), see the
+              <a href="call-for/camera-ready-instructions.html">Camera-Ready Instructions</a>.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>1. Live Demo Preparation</h3>
+
+            <h4>Demo Content</h4>
+            <p>The demonstration should clearly communicate:</p>
+            <ul>
+              <li><strong>Problem:</strong> What problem does the system address?</li>
+              <li><strong>Solution:</strong> What system, tool, prototype, or technique was developed?</li>
+              <li><strong>Operation:</strong> How does it work in practice?</li>
+              <li><strong>Key capabilities:</strong> What are the most important features?</li>
+              <li><strong>Results:</strong> What does the demonstration show?</li>
+              <li><strong>Relevance:</strong> How does the work contribute to post-quantum or quantum-based security?</li>
+            </ul>
+            <p>
+              Authors should emphasize the working system and demonstration rather than giving a conventional paper
+              presentation.
+            </p>
+
+            <div style="height: 12px"></div>
+            <h4>Prepare a Reliable Demo</h4>
+            <p>Before the conference:</p>
+            <ul>
+              <li>Test the complete demonstration from beginning to end.</li>
+              <li>
+                Prepare all software, datasets, configurations, cryptographic keys/test credentials, and other required
+                resources in advance.
+              </li>
+              <li>Verify that required software and dependencies work on the demonstration machine.</li>
+              <li>Minimize reliance on external services or network connectivity where possible.</li>
+              <li>If Internet access is required, prepare a reasonable offline or prerecorded fallback.</li>
+              <li>Use only test/synthetic data, credentials, keys, and accounts appropriate for public demonstration.</li>
+              <li>
+                Do not expose confidential information, production credentials, private keys, personal data, or other
+                sensitive material.
+              </li>
+            </ul>
+
+            <div style="height: 12px"></div>
+            <h4>Keep the Demo Focused</h4>
+            <p>
+              Design the live demonstration so that attendees can understand the core idea within a few minutes. A useful
+              flow is:
+              <strong
+                >Problem &rarr; System/Architecture &rarr; Live Operation &rarr; Key Result &rarr; Security
+                Significance</strong
+              >
+            </p>
+            <p>
+              Authors should be prepared to repeat the demonstration for different attendees during the demo session.
+            </p>
+
+            <div style="height: 12px"></div>
+            <h4>Equipment</h4>
+            <p>Authors should bring the equipment necessary to conduct their demonstration, including as applicable:</p>
+            <ul>
+              <li>Laptop(s)</li>
+              <li>Power adapters/chargers</li>
+              <li>Required cables and adapters</li>
+              <li>Mobile/IoT/embedded devices</li>
+              <li>Hardware security or cryptographic devices</li>
+              <li>Other specialized equipment required by the demonstration</li>
+            </ul>
+            <p>
+              Any unusual requirements for power, networking, display equipment, physical space, or other infrastructure
+              should be communicated to the PQQS 2026 organizers in advance.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Demo Video Recording Guidelines</h3>
+            <p>Authors of accepted Demo Papers should also prepare a short video demonstrating the accepted work.</p>
+
+            <h4>2. Recommended Video Structure</h4>
+            <p>The video should primarily demonstrate the system rather than reproduce the paper presentation.</p>
+            <p>A recommended structure is:</p>
+            <ol>
+              <li>
+                <strong>Title and Introduction</strong> &mdash; Show the demo title, authors, and affiliations and briefly
+                introduce the problem.
+              </li>
+              <li>
+                <strong>System Overview</strong> &mdash; Briefly explain the system architecture, setup, or workflow needed
+                to understand the demonstration.
+              </li>
+              <li>
+                <strong>Actual Demonstration</strong> &mdash; Show the system operating. Walk through the important
+                functionality and explain what the viewer is seeing.
+              </li>
+              <li>
+                <strong>Results / Key Takeaway</strong> &mdash; Highlight the most important result, capability, or
+                security benefit demonstrated.
+              </li>
+              <li>
+                <strong>Conclusion</strong> &mdash; Briefly summarize the contribution and its relevance to PQQS.
+              </li>
+            </ol>
+            <p>The actual demonstration should constitute the majority of the video.</p>
+
+            <div style="height: 12px"></div>
+            <h4>3. Video Length</h4>
+            <ul>
+              <li>Keep the video concise and focused.</li>
+              <li>Recommended duration: <strong>3&ndash;5 minutes</strong>.</li>
+              <li>Avoid spending substantial time on background material that is already available in the paper.</li>
+            </ul>
+
+            <div style="height: 12px"></div>
+            <h4>4. Recording Quality</h4>
+            <p>For good viewing quality:</p>
+            <ul>
+              <li>Record at 1080p (1920 &times; 1080) where possible.</li>
+              <li>Use a 16:9 landscape format.</li>
+              <li>Ensure that screen text, terminal output, diagrams, and application interfaces are readable.</li>
+              <li>Use clear audio with minimal background noise.</li>
+              <li>Use screen recording rather than recording a computer monitor with a phone/camera whenever practical.</li>
+              <li>Zoom or enlarge terminal/interface text when necessary.</li>
+              <li>Avoid rapid mouse movements or excessively fast transitions.</li>
+              <li>Use captions/subtitles where practical to improve accessibility.</li>
+              <li>
+                For demonstrations involving physical hardware, ensure that the camera clearly shows the relevant device
+                and its operation.
+              </li>
+            </ul>
+
+            <div style="height: 12px"></div>
+            <h4>5. Security and Privacy Check</h4>
+            <p>Before recording and submitting the video, carefully review it for accidentally exposed information.</p>
+            <p>The video must not reveal:</p>
+            <ul>
+              <li>Passwords or authentication credentials</li>
+              <li>Private cryptographic keys</li>
+              <li>API keys or access tokens</li>
+              <li>Confidential or proprietary information not intended for publication</li>
+              <li>Personal or sensitive information</li>
+              <li>Internal network addresses or infrastructure details that should not be public</li>
+              <li>Unrelated information visible in terminals, browser tabs, notifications, or the desktop</li>
+            </ul>
+            <p>Use test environments and synthetic/test credentials whenever possible.</p>
+
+            <div style="height: 12px"></div>
+            <h4>6. Final Video Check</h4>
+            <p>Before submission, play the entire video from beginning to end and verify that:</p>
+            <ul>
+              <li>The correct title, authors, and affiliations are shown.</li>
+              <li>The demonstration is understandable without additional explanation.</li>
+              <li>The important functionality is clearly visible.</li>
+              <li>Screen text is readable.</li>
+              <li>Audio is clear and synchronized.</li>
+              <li>No sensitive information is visible.</li>
+              <li>The video plays correctly from beginning to end.</li>
+              <li>The video satisfies the specified duration and format requirements.</li>
+            </ul>
+
+            <div style="height: 12px"></div>
+            <h4>7. Live Demo Backup</h4>
+            <p>
+              Authors are strongly encouraged to keep the final demo video available during the conference as a backup for
+              the live demonstration. If an unexpected hardware, software, connectivity, or environmental problem prevents
+              part of the live system from operating, the recorded video can be used to help demonstrate the intended
+              functionality.
+            </p>
+            <p>
+              The recorded video should complement the live demonstration rather than replace it, unless otherwise
+              instructed by the PQQS 2026 organizers.
+            </p>
+
+            <hr class="cfp-section-rule" aria-hidden="true" />
+            <h3>Contact</h3>
+            <p>
+              For questions, please contact the Program Chairs at
+              <a href="mailto:pqqs26-pcchairs@acm.org"><strong>pqqs26-pcchairs@acm.org</strong></a>.
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 ACM PQQS. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
