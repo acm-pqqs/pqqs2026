@@ -822,6 +822,70 @@ a.sponsor-card:focus-visible {
   grid-column: span 12;
 }
 
+.program-day + .program-day {
+  margin-top: 28px;
+}
+
+.program-day h3 {
+  margin: 0 0 4px;
+}
+
+.program-theme {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.program-schedule {
+  display: grid;
+  gap: 8px;
+}
+
+.program-row {
+  display: grid;
+  grid-template-columns: 11.5rem 1fr;
+  gap: 12px;
+  align-items: start;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.program-time {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.program-session {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.16);
+}
+
+.program-session .program-item {
+  font-weight: 650;
+  grid-column: 1 / -1;
+}
+
+.program-break {
+  background: rgba(217, 119, 6, 0.12);
+  border-color: rgba(180, 83, 9, 0.28);
+}
+
+.program-break .program-item,
+.program-break .program-time {
+  font-weight: 650;
+  color: #9a3412;
+}
+
+@media (max-width: 640px) {
+  .program-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
 .timeline {
   display: grid;
   gap: 12px;
