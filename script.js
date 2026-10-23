@@ -229,6 +229,7 @@ function setupSpeakerHovers() {
   function hide() {
     clearTimeout(hideTimer);
     popover.hidden = true;
+    popover.scrollTop = 0;
     if (openTrigger) openTrigger.setAttribute("aria-expanded", "false");
     openTrigger = null;
   }
@@ -283,7 +284,9 @@ function setupSpeakerHovers() {
       popover.classList.add("speaker-popover--no-photo");
     }
     popover.hidden = false;
+    popover.scrollTop = 0;
     place(trigger);
+    popover.scrollTop = 0;
   }
 
   triggers.forEach((trigger) => {
@@ -328,6 +331,15 @@ function setupSpeakerHovers() {
 
   popover.addEventListener("pointerenter", () => clearTimeout(hideTimer));
   popover.addEventListener("pointerleave", scheduleHide);
+
+  document.addEventListener("pointerdown", (event) => {
+    if (!openTrigger) return;
+    const target = event.target;
+    if (!(target instanceof Node)) return;
+    if (popover.contains(target)) return;
+    if (target.closest && target.closest(".speaker-ref")) return;
+    hide();
+  });
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") hide();
