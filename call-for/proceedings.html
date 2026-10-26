@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      (function () {
+        var segs = location.pathname.split("/").filter(Boolean);
+        var basePath = "/";
+        if (segs.length > 0) {
+          var first = segs[0];
+          var siteTop = { "call-for": 1, code: 1, participants: 1, team: 1, assets: 1 };
+          var looksLikeFile = /\.html?$/i.test(first);
+          if (!looksLikeFile && !siteTop[first]) {
+            basePath = "/" + first + "/";
+          }
+        }
+        document.write('<base href="' + basePath + '">');
+      })();
+    </script>
+    <title>Proceedings — ACM PQQS 2026</title>
+    <meta name="description" content="Proceedings of the 2026 ACM Conference on Post-Quantum and Quantum-based Security." />
+    <link rel="icon" type="image/png" href="assets/CCS-logo.png" />
+    <link rel="apple-touch-icon" href="assets/CCS-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" role="banner">
+      <nav class="top-nav" aria-label="Primary">
+        <div class="nav-left">
+          <a class="brand" href="index.html" aria-label="ACM PQQS 2026 Home">
+            <span class="brand-title">ACM PQQS 2026</span>
+          </a>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-controls="primary-nav"
+            aria-expanded="false"
+          >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+          </button>
+
+          <ul class="nav-links" id="primary-nav" role="list">
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Technical Program
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/accepted-papers.html">Accepted Papers</a></li>
+                <li><a class="dropdown-link" href="call-for/accepted-posters-demos.html">Accepted Posters and Demos</a></li>
+                <li><a class="dropdown-link" href="call-for/detailed-program.html">Detailed Program</a></li>
+                <li><a class="dropdown-link" href="call-for/proceedings.html" aria-current="page">Proceedings</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Speakers
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/keynote-speaker.html">Keynote Speakers</a></li>
+                <li><a class="dropdown-link" href="team/invited-speaker.html">Invited Speakers</a></li>
+                <li><a class="dropdown-link" href="team/panels.html">Panels</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Attend
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="participants/registration.html">Registration</a></li>
+                <li><a class="dropdown-link" href="participants/travel-and-venue.html">Travel and Venue</a></li>
+                <li><a class="dropdown-link" href="https://supportletters.acm.org/" target="_blank" rel="noopener noreferrer">Visa Support Letters</a></li>
+                <li><a class="dropdown-link" href="participants/travel-grants.html">Travel Grants for Students</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Call for
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="call-for/call-for-papers.html">Call for Papers</a></li>
+                <li>
+                  <a class="dropdown-link dropdown-link--nested" href="call-for/camera-ready-instructions.html"
+                    >Camera-Ready Instructions</a
+                  >
+                </li>
+                <li><a class="dropdown-link" href="call-for/call-for-poster-demo.html">Call for Poster &amp; Demo Papers</a></li>
+                <li>
+                  <a class="dropdown-link dropdown-link--nested" href="call-for/poster-preparation-guidelines.html"
+                    >Poster Preparation Guidelines</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-link dropdown-link--nested" href="call-for/demo-preparation-guidelines.html"
+                    >Demo Preparation Guidelines</a
+                  >
+                </li>
+                <li><a class="dropdown-link" href="call-for/call-for-sponsorship.html">Call for Sponsorship</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Organizing Committees
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="team/program-committee.html">Program Committee</a></li>
+                <li><a class="dropdown-link" href="team/organizing-committee.html">Organizing Committee</a></li>
+                <li><a class="dropdown-link" href="team/steering-committee.html">Steering Committee</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <button class="nav-link dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+                Code
+              </button>
+              <ul class="dropdown-menu" role="list">
+                <li><a class="dropdown-link" href="code/code-of-conduct.html">Code of Conduct</a></li>
+                <li><a class="dropdown-link" href="code/diversity-and-inclusion.html">Diversity and Inclusion</a></li>
+                <li><a class="dropdown-link" href="code/acm-open-access-policy.html">ACM Open-Access Policy</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" class="main" role="main">
+      <section id="home" class="hero" aria-label="Conference hero">
+        <div class="hero-overlay" role="presentation">
+          <div class="hero-overlay-inner">
+            <img class="hero-logo" src="assets/CCS-logo.png" alt="ACM SIGSAC logo" loading="eager" decoding="async" />
+            <p class="hero-kicker">ACM Conference on Post-Quantum and Quantum-based Security</p>
+            <h1 class="hero-title">ACM PQQS 2026</h1>
+            <p class="hero-meta">
+              <span class="hero-meta-item">November 2–4, 2026</span>
+              <span class="hero-meta-dot" aria-hidden="true">•</span>
+              <span class="hero-meta-item">San Jose, CA, USA</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="hero-media" aria-hidden="true" style="--bg: url('assets/new-0.jpg');"></div>
+      </section>
+
+      <section class="content">
+        <section class="section">
+          <div class="section-header">
+            <h2>Proceedings</h2>
+            <p class="section-subtitle">PQQS '26: Proceedings of the 2026 ACM Conference on Post-Quantum and Quantum-based Security.</p>
+          </div>
+          <div class="card">
+            <p><a href="https://dl.acm.org/doi/proceedings/10.1145/3839338" target="_blank" rel="noopener noreferrer">Full citation in the ACM Digital Library</a></p>
+            <ol class="proceedings-list" aria-label="Proceedings">
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857242" target="_blank" rel="noopener noreferrer">A polynomial-time key recovery attack on Facto-DSA</a></p>
+              <p class="proceedings-authors">Simon Abelard, Ludovic Perret, Hao Shi</p>
+              <div class="proceedings-abstract">
+                <p>This work introduces a polynomial-time attack on the signature scheme introduced in [GR26] as Facto-DSA. We provide an implementation that breaks all proposed parameter sets, including the largest, in under one minute on a standard laptop. These results question the suitability of multivariate polynomial factorization as a foundation for robust cryptographic schemes.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857245" target="_blank" rel="noopener noreferrer">QuantumScouter: Reinforcement Learning-Based Optimization of Variational Quantum Circuits for Differential Cryptanalysis</a></p>
+              <p class="proceedings-authors">Gilsang Ahn, Insung Kim, Jiwoo Baek, Donggun Lee, Changmin Lee, Seokhie Hong, Dongjae Lee</p>
+              <div class="proceedings-abstract">
+                <p>Classical deep learning for differential cryptanalysis requires millions of ciphertext pairs, rendering attacks infeasible or easily detectable. This work overcomes this data limitation by introducing quantum differential distinguishers, enabling a practical attacker model where executing few queries is feasible. We design these distinguishers via quantum machine learning based on variational quantum circuits. To address circuit design challenges, we propose QuantumScouter, a reinforcement learning method that discovers compact quantum circuits. Unlike prior work, QuantumScouter explicitly targets metrics like gate count and circuit depth, producing circuits suitable for noisy intermediate-scale quantum hardware. We apply QuantumScouter to the SPECK32/64 and SIMON32/64 ciphers. The models are trained to distinguish ciphertext pairs possessing a meaningful differential from completely random pairs. For SPECK, our approach achieves 0.80 accuracy, outperforming the 0.53 of prior work while reducing required qubits from 16 to 6. For SIMON, we establish a novel quantum baseline with 0.75 accuracy. Notably, under a restricted regime of merely 400 training samples, classical deep learning models struggle. A simple MLP with 361 parameters fails to capture differential characteristics, resulting in an accuracy of 0.51, while a deep ResNet with 64,737 parameters overfits to yield an accuracy of 0.55. In stark contrast, our data-efficient quantum distinguisher extracts meaningful features using only 49 gates, maintaining 0.80 accuracy.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857258" target="_blank" rel="noopener noreferrer">SoK: Stablecoins in the Quantum Era</a></p>
+              <p class="proceedings-authors">Panagiotis Chatzigiannis, Navid Alamati, Suvradip Chakraborty, Duc V. Le</p>
+              <div class="proceedings-abstract">
+                <p>Stablecoins support payments, trading, collateral, and cross-chain settlement across the digital-asset ecosystem. They also concentrate value behind issuer, custody, upgrade, oracle, and bridge keys while inheriting the quantum vulnerabilities of host-chain accounts, consensus, rollups, and privacy systems. This paper presents a Systematization of Knowledge (SoK) on post-quantum stablecoins. We develop a stablecoin-specific threat model, map cryptographic dependencies to monetary control surfaces, and classify migration choices along three dimensions: who can authorize a change, where the change must occur, and whether it is hybrid, post-quantum native, or an encapsulation of a classical component. We emphasize an authority-liability gap: the party able to migrate a component is often different from the holders, exchanges, protocols, or issuers that bear the loss if it fails. We review the relevant cryptographic primitives, but distinguish general blockchain failures from their stablecoin-specific effects. We also examine recent blockchain and issuer-controlled interoperability proposals, and relate migration choices to redemption, continuity, and intervention requirements under current stablecoin regulation. Our findings identify open problems in aggregate and threshold authorization, operation-specific security levels and costs, dormant and wrapped supply, private and compliance-enabled transfers, and measurement of quantum-vulnerable stablecoin exposure.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857276" target="_blank" rel="noopener noreferrer">Stealing Variational Secrets from Quantum Clouds: Physical QAOA Parameter Recovery</a></p>
+              <p class="proceedings-authors">José Luis Delgado</p>
+              <div class="proceedings-abstract">
+                <p>In shared quantum-cloud systems, variational programs encode costly classical optimization in rotation angles that can leak through adjacent hardware. We present the first physical recovery of a useful variational parameter region from a complete workload. The attack observes a disjoint idle two-qubit register during a 24-qubit quantum approximate optimization algorithm (QAOA) execution, without victim outputs or model queries. A fixed Marrakesh decoder distinguishes the regions under identical circuits, reaching 85/96 accuracy on held-out jobs and ROC AUC 0.997. Tests over separate time periods, matched controls, and a placement retest confirm the response at one of 17 layouts; conditional subsampling gives 0.756 expected accuracy from 2,000 observations.</p>
+                <p>A public workload census finds source separation in 92 of 2,100 QAOA workloads, including five of 420 held-out workloads. For continuous secrets, a Jacobian factorization separates victim sensitivity, physical transfer, and scheduling, then converts channel gain into parameter and utility bounds. Under conditionally independent affine leakage, observable terms form a binary linear code. Its shortest element determines the first leakage order, while its dimension determines how many random bits perfect secrecy requires. Fresh masks defer leakage to the shortest cycle, while mask reuse creates a second-order temporal channel; the same code yields maximum safe slot concurrency.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857237" target="_blank" rel="noopener noreferrer">QUAPLA : a library for quantum exact linear algebra</a></p>
+              <p class="proceedings-authors">Ulysse Dupont-Latapie, Ludovic Perret</p>
+              <div class="proceedings-abstract">
+                <p>In this paper, we introduce QUAPLA (Quantum Python Linear Algebra), a new Python package that implements basic finite field arithmetic on scalars and matrices on a quantum computer. More precisely, QUAPLA is a new module of QARTON [36], a recent general-purpose software library for quantum cryptanalysis. QUAPLA extends QARTON by providing, in particular, quantum circuit implementations of the Berlekamp-Massey algorithm and Wiedemann's algorithm for fields of odd characteristic and their extensions, as well as parametrized resource estimates for these circuits.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857241" target="_blank" rel="noopener noreferrer">DUOV: A Dressing in Advance for Threshold UOV with Pre-signing</a></p>
+              <p class="proceedings-authors">Elouan Gros, Dayane Horkos, River Moreira-Ferreira, Ludovic Perret</p>
+              <div class="proceedings-abstract">
+                <p>We present DUOV, a new post-quantum threshold version of the Unbalanced Oil and Vinegar (UOV) multivariate signature scheme of Kipnis, Patarin, and Goubin, augmented with <em>pre-signing.</em> To do so, we exploit the fact that most of UOV signing is independent of the message. By pre-computing the message-independent data into a <em>pre-signature</em> (dressing), we reduce online threshold signing to a sequence of local linear operations followed by a single broadcast, achieving a one-round online phase. We then provide the first evaluation of a threshold multivariate scheme on a real distributed network rather than emulating the network locally or absolving ourselves of it entirely. We implement DUOV in Common Lisp and deploy it across 16 geographically distinct AWS regions, connected over the public internet with its intercontinental latency. For networks of 2 to 16 parties, our experiments show that the one-round online protocol remains fast even under realistic wide-area conditions.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857267" target="_blank" rel="noopener noreferrer">Practical Post-Quantum Secure Publicly Verifiable Secret Sharing and Applications</a></p>
+              <p class="proceedings-authors">Aniket Kate, Pratyay Mukherjee, Hamza Saleem, Pratik Sarkar, Rohit Sinha</p>
+              <div class="proceedings-abstract">
+                <p>We present a new framework for constructing practically efficient publicly verifiable secret sharing (PVSS) with <em>non-interactive dealers</em>, in that the dealer may go offline after sending a single message, and is not involved in the share verification process. We use identity-based encryption (IBE) and commitments as the main ingredients and avoid expensive zero-knowledge proofs. By instantiating them with post-quantum secure schemes, a lattice-based IBE and a hash-based commitment, we obtain our first construction: a post-quantum secure PVSS with non-interactive dealers that outperforms the prior lattice-based practical construction by Gentry et al. [Eurocrypt 2022].</p>
+                <p>However, to enable the aggregation of PVSS transcripts (which facilitates many additional applications such as secure voting), we propose our second construction by replacing hash-based commitments with Pedersen's homomorphic commitments. While this does not achieve full-fledged post-quantum security (as Pedersen's scheme is not quantum safe), it still provides privacy against a post-quantum adversary. We prove the security of this construction in a new model, which we call long-lasting security. This model guarantees that the protocol is secure in the present (pre-quantum era) while maintaining privacy in the long term (post-quantum era). This new model is of independent interest for constructing efficient schemes that are resilient to the harvest-now-decrypt-later line of attacks. In this model, we propose a blockchain-compatible secure voting scheme using our PVSS scheme.</p>
+                <p>Our PVSS schemes demonstrate practical efficiency: our post-quantum PVSS shares a secret among 1024 receivers in 667 ms and verifies the dealing in &lt; 5 ms, and communicates 4.4MB, overall whereas the state of the art [Gentry et al., Eurocrypt 2022] communicates 251MB and requires 2060s for dealing the secret.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857238" target="_blank" rel="noopener noreferrer">NTRU Fatigue with Sparse Secrets: From Lattice Geometry to Attack Cost</a></p>
+              <p class="proceedings-authors">Wun-Ting Lin, Ja-Ling Wu</p>
+              <div class="proceedings-abstract">
+                <p>The security of the NTRU lattice exhibits a <em>fatigue</em> transition at a critical modulus <em>q</em><sup>*</sup>. When <em>q</em> &lt; <em>q</em><sup>*</sup>, lattice reduction is dominated by the direct recovery of a secret-key rotation (SKR). In contrast, once <em>q</em> &gt; <em>q</em><sup>*</sup>, recovering the dense sublattice spanned by all secret rotations (DSD) becomes cheaper. For homogeneous secrets, this crossover is well calibrated: <em>q</em><sup>*</sup> ≈ 0.004 <em>n</em><sup>2.484</sup> for ternary keys, and <em>q</em><sup>*</sup> ≈ 0.0058 σ<sup>2</sup><em>n</em><sup>2.484</sup> for Gaussian secrets of variance σ<sup>2</sup>.</p>
+                <p>NTRU parameters in fully homomorphic encryption (FHE) deviate from this homogeneous model: the secret has the structured form <em>f</em> = 1 + <em>pf'</em>, and <em>f'</em> can be chosen as a sparse polynomial of fixed weight <em>h.</em> We show that sparsity acts on the fatigue transition through two distinct channels. Geometrically, the DSD volume depends on the ratio <em>r</em> = <em>A/B</em> of the expected squared norms <em>A</em> = E||<em>f</em>||<sup>2</sup><sub>2</sub> = 1 + <em>p</em><sup>2</sup><em>h</em> and <em>B</em> = E||<em>g</em>||<sup>2</sup><sub>2</sub> = nσ<sup>2</sup><sub><em>g</em></sub>. Under a Gaussian embedding approximation, this yields an effective variance σ<sup>2</sup><sub>eff</sub> = <em>k</em>(<em>r</em>)σ<sup>2</sup><sub><em>g</em></sub>, where [EQUATION]. This formulation directly maps the geometry of the unbalanced pair (<em>f</em>, <em>g</em>) to the homogeneous fatigue baseline. We validate our predicted dense-sublattice log-volume against sampled keys, observing close agreement; the only deviation is a minor, conservative residual from the Gaussian embedding approximation at extreme sparsity, bounded below 1% of <em>q</em><sup>*</sup>.</p>
+                <p>Algorithmically, sparsity enables combinatorial key-recovery attacks that are substantially cheaper than lattice SKR. We therefore distinguish the classical lattice crossing <em>q</em><sup>*</sup><sub>lat</sub> from a <em>cost-aware</em> fatigue point <em>q</em><sup>*</sup><sub>cost</sub>, defined as the threshold where DSD overtakes the lowest-cost attack (such as primal-uSVP or hybrid algorithms). Using the Lattice Estimator, we find that these two transitions differ by more than an order of magnitude in <em>q</em> at <em>n</em> = 256, revealing that a lattice-only analysis overstates the best modeled attack complexity by tens of bits for sparse keys. In deployed FHE parameter sets that thin <em>h</em> as <em>n</em> grows, this overstatement exceeds one thousand bits at <em>n</em> = 8192. These results demonstrate that sparse-NTRU parameter selection must simultaneously account for the embedding ratio <em>r</em> and the scaling law <em>h</em>(<em>n</em>), rather than the Hamming weight alone.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857240" target="_blank" rel="noopener noreferrer">Certified Confinement: Kernel-Checked Validation of Untrusted Quantum-Cloud Transpiler Output</a></p>
+              <p class="proceedings-authors">Ali Hamza Malik, Muhammad Taqi Raza</p>
+              <div class="proceedings-abstract">
+                <p>Cloud providers are adopting spatial multi-tenancy to improve quantum processing unit (QPU) utilization. However, this introduces cross-tenant vulnerabilities: otherwise hardware-legal circuits may place operations adjacent to co-tenant qubits, creating a leakage channel via physical coupling. Because tenants cannot safely trust cloud transpilers, we introduce an efficient client-side validator for buffered gate-support confinement. Given a device coupling graph, a forbidden region, and a buffer radius <em>k</em>, the validator rejects circuits containing non-identity gates within the forbidden zone or its <em>k</em>-hop neighborhood. We formally establish this structural guarantee via a Lean soundness theorem. In QASMBench experiments, we find that up to 71% of stock transpiler outputs violate this buffered policy despite being hardware-legal. Our validator catches these violations with zero false rejections when the allocation correctly reserves the buffer, yielding kernel-checked verdicts across 11 IBM device topologies. To empirically justify the buffer radius, we characterized two IBM Heron r2 QPUs. Under a 5σ distinguishing criterion, nearest-neighbor (one-hop) leakage is detectable in a median of just 186 shots, whereas two-hop leakage requires an estimated 1.3 X 10<sup>5</sup> to 1.9 X 10<sup>7</sup> shots, remaining undetectable under tested conditions. Together, our hardware measurements justify graph-buffered allocation against nearest-neighbor channels, while our formal certificate provides a rigorous guarantee of gate-support confinement.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857247" target="_blank" rel="noopener noreferrer">Toward Practical Post-Quantum Cryptography Migration: Lessons from a Central Bank’s Crypto-Agility Experiments</a></p>
+              <p class="proceedings-authors">Pontakorn Mekintarangkoon, Prempoon Srimonta, Kittipos Giatgong, Tanakorn Kerdrattikal</p>
+              <div class="proceedings-abstract">
+                <p>The transition to post-quantum cryptography (PQC) is often framed as an algorithm replacement problem, but practical adoption depends on the readiness of the entire cryptographic execution environment. This paper presents an empirical study of PQC migration in a central bank environment through two complementary experiments. The first examines direct replacement of RSA-based digital signatures with ML-DSA in modern and legacy enterprise applications. The second experiment evaluates a centralized Cryptography-as-a-Service architecture that decouples applications from cryptographic implementations. The direct-replacement experiment showed that modular applications could adopt ML-DSA with limited application-level changes, whereas legacy systems required modifications to source code, and additional cryptographic providers. However, even successful application-level integration did not guarantee deployability. The centralized approach enabled migration from classical algorithms to ML-DSA and ML-KEM while preserving existing application interfaces, but exposed limitations in provider support, hardware-security-module integration, memory stability, and execution performance. Performance results further showed that migration impacts depend substantially on the cryptographic provider and execution environment rather than on the algorithm alone. These findings demonstrate that crypto agility must extend across the complete cryptographic execution chain. The paper derives practical architectural and operational considerations for planning enterprise PQC migration, particularly in heterogeneous environments containing both modern and legacy systems.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857255" target="_blank" rel="noopener noreferrer">A quantum algorithm for one-shot signatures</a></p>
+              <p class="proceedings-authors">Gopikrishnan Muraleedharan, Minh Thuy Truc Pham, Vir Pathak, Thomas Gardner, Chuanqi Zhang, Samuel Crew, Tom Hartweg, Adrian Aasen, Guido Masella, Vase Moeini, Asier Piñeiro Orioli, Hugo Perrin, Gavin K. Brennen</p>
+              <div class="proceedings-abstract">
+                <p>We provide a pre-obfuscation circuit-level implementation of an efficient one shot signature scheme, which has known applications to delegated signatures, secure token transfer, and publicly verifiable randomness. The algorithm consists of two stages: a key generation stage where a classical public key/quantum secret key pair is produced, and a signing stage where the quantum secret key is processed with a message string to produce a classical signature. There is no algorithmic error in the construction and the signed message can be efficiently checked by a classical verifier. Our scheme works by preparing a superposition over elements of a random affine coset determined by the output of a puncturable pseudorandom function, together with a circuit that tests coset membership. The logical qubit number scales like Θ(<em>κ</em> log(<em>r</em>) + <em>n</em> + <em>l</em>) and the gate complexity scales like Θ(<em>n</em><sup>3</sup> + <em>nl</em>), where <em>r</em> is the public key size, <em>n</em> + <em>l</em> is the signature size, <em>l</em> is the message size, and <em>κ</em> = Ω(<em>n</em>) is the cryptographic security parameter. We provide explicit qubit and gate counts before obfuscation. A secure instantiation additionally requires modified key generation and a security proof for the resulting obfuscated construction.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857243" target="_blank" rel="noopener noreferrer">Cryptographic Migration with Implicit Dependencies</a></p>
+              <p class="proceedings-authors">Eunisse Nzetchuen, Bodo Igler, Daniel Loebenberger, Marc Stöttinger</p>
+              <div class="proceedings-abstract">
+                <p>Migrating complex distributed systems to post-quantum cryptography (PQC) is hard because cryptographic assets and system components are connected by numerous dependencies. Existing inventory approaches, including those based on Cryptographic Bills of Materials (CBOMs), capture only explicitly observable relations, and therefore miss dependencies arising from domain-specific knowledge, system behavior, or operational constraints. We discuss different types of dependencies and propose a formal framework and methodology for detecting them across the components of a complex system, thereby supporting migration towards PQC algorithms. The methodology is based on a dependency graph model of the cryptographic assets such as primitives, protocols, and keys. To detect implicit dependencies that may be missing from an initially available graph, we introduce dependency-type-specific test functions and a migration oracle which support the incremental validation and refinement of the dependency model during the construction of a valid migration strategy. To illustrate the approach, we present a clustering-based algorithm that detects implicit dependencies and derives a valid migration strategy. A key finding is that missing functional dependencies are signaled by the oracle, whereas missing security dependencies are not, so the security of the resulting strategy depends on the completeness of the test functions. We evaluate the methodology on an automotive-inspired use case and show how functional validation helps to detect previously unknown dependencies and contributes to a valid migration sequence.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857263" target="_blank" rel="noopener noreferrer">On linearly derived quantum samples for LWE</a></p>
+              <p class="proceedings-authors">Niklas Pirnay, Jean-Pierre Seifert</p>
+              <div class="proceedings-abstract">
+                <p>It is known that the Learning with Errors (LWE) problem becomes easy using the Field Bernstein-Vazirani (FBV) quantum algorithm with access to <em>quantum samples</em> of the LWE function. We revisit a suggested route to approximate such a state: coherently superposing linear combinations of classical LWE samples and erasing the combination index register. For the full <em>q</em>-ary coefficient set F<sup><em>m</em></sup><sub><em>q</em></sub>, we show that even an ideal index-erased state does not have the required behavior: Field Bernstein-Vazirani either rejects or returns a fixed noisy translate of the secret. We then analyze more general coefficient families <em>U</em> ⊆ F<sup><em>m</em></sup><sub><em>q</em></sub> and their true-secret success probabilities. In the binary LPN case, this reveals an explicit tradeoff between sample space coverage and coefficient vector distances. Co-efficient families such as fixed-weight layers and low-weight balls yield idealized subexponential FBV repetition regimes, although these estimates exclude the cost of preparing the corresponding target states. Our analysis separates the Fourier obstruction from the state-preparation problem and provides a criterion for evaluating restricted-family constructions.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857244" target="_blank" rel="noopener noreferrer">Multi-client Delegated Verifiable Blind Quantum Computing</a></p>
+              <p class="proceedings-authors">Matthew Prest, Rosario Gennaro</p>
+              <div class="proceedings-abstract">
+                <p>We construct a multi-Client verifiable blind delegated quantum computing (VBDQC) protocol in which <em>M</em> classical Verifier Clients jointly delegate a public quantum circuit acting on their combined private inputs to two quantum-capable Provers sharing entanglement but having no direct communication channel. We begin by modifying the single-Client, entanglement-based CGJV Verifier-on-a-Leash protocol. We then prove simulator-based blind verifiability for the modified protocol using the abstract/constructive cryptography framework. We adapt the DFPR upward-reduction chain to the two-Prover setting, constructing a no-direct-communication simulator architecture. We then extend the CGJV protocol to <em>M</em> Clients using classical multiparty computation techniques, preserving the single-Client guarantees of completeness, soundness, and blindness while additionally guaranteeing input privacy between Clients. Security is analyzed under a threat model that allows a subset of Clients to collude with one but not both of the Provers, which do not communicate even after the protocol execution.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857257" target="_blank" rel="noopener noreferrer">Pinpointing Super-Quadratic Quantum Enumeration Speedups: Exact and Certified Evaluation of the Guessing-Moment Exponent under Product-Distribution Advice</a></p>
+              <p class="proceedings-authors">Carsten Schubert, Niklas Paskarbeit, Maximilian J. Kramer, Jean-Pierre Seifert, Marian Margraf</p>
+              <div class="proceedings-abstract">
+                <p>In cryptanalysis and beyond, presumably the most basic problem is search within an unstructured space: Given a finite set of elements <em>K</em>, find a marked element using an efficiently evaluable predicate. Grover's algorithm [16] gives an optimal quadratic query advantage for black-box search. Cryptanalytic settings, however, often come with additional probabilistic advice over the candidate space. These distributions frequently have product form, e.g. when probabilities for independent key coordinates are derived from side-channel leakage. Classically, simply querying the predicate function in the given likelihood order is optimal to find the correct result as fast as possible in expectation. In the quantum setting, Montanaro [26] showed how to achieve an optimal expected query complexity, beating plain Grover on every non-uniform distribution of the advice (disregarding a constant overhead factor). What has been missing so far is a finite-size method for evaluating the quantum-classical guessing-moment separation induced by a given advice distribution. We provide such a method for product-distribution advice, thereby sharpening the previous entropy-based estimate of Bashiri et al. [6]. Our approach reduces the relevant classical and quantum guessing moments to functionals of the one-dimensional <em>surprisal</em> distribution. For product advice, this distribution is obtained by convolving the per-coordinate surprisal laws. When the surprisals lie on a common arithmetic grid—the <em>commensurate case</em>—the resulting logarithmic moments, and hence the speedup exponent, can be evaluated as finite sums without discretization error. Exponential tilting makes this computation numerically stable. For general non-commensurate product advice, we discretize the surprisals onto a common grid before running our algorithm and derive an a-posteriori bound on the resulting binning error. We apply the framework to cold-boot leakage on seeds and block-cipher keys, to template-attack posteriors, and to synthetic i.i.d. Bernoulli posteriors whose parameter is chosen to reproduce average residual ranks reported for Keccak side-channel attacks on ML-KEM and ML-DSA. The resulting guessing-moment exponents substantially exceed 2 in several skewed-advice settings, reaching 3.92 for cold-boot advice and 3.12 in the synthetic models, and include cases where the previous entropy-based bound did not establish an exponent above 2.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857253" target="_blank" rel="noopener noreferrer">Sequential vs. Synchronized Entanglement Swapping: QKD Secret-Key Rate under Optimized Link-Layer Control</a></p>
+              <p class="proceedings-authors">Priyam Srivastava, Akshat R. Sabavat, Siddharth Jain, Alan Scheller-Wolf, Sridhar Tayur, David Tipper, Prashant Krishnamurthy, Amy Babay, Kaushik Seshadreesan</p>
+              <div class="proceedings-abstract">
+                <p>Quantum repeater chains build long-distance entanglement for quantum key distribution (QKD) by creating pairs on short links and joining them through entanglement swapping. Because stored pairs lose fidelity while they wait, swap timing can affect the secret-key rate. We study how network-layer swap scheduling affects six-state QKD on a simulated four-hop chain under an idealized Werner-state noise model. We compare a sequential (swap-and-wait) discipline, which builds and stores partial chains, with a synchronized (wait-and-swap) discipline, which waits until all links are ready before swapping. Both use the same reinforcement-learned link controllers, isolating the effect of the swapping discipline. When stored pairs cannot retain sufficient fidelity for one network time step, our sequential implementation produces no key, while synchronized retains a small key rate from simultaneous link deliveries. Once sequential becomes viable, it outperforms synchronized by up to 19.1% in the homogeneous chains studied, with the advantage decreasing as memory lifetime increases. We predict the synchronized short-memory pair-delivery rate from link-delivery statistics and derive a closed-form condition for when sequential can preserve progress across time steps. We also examine chains with one slower link, where partial chains can wait and decay at the bottleneck. In this setting, synchronized slightly outperforms sequential at longer memory lifetimes. Moving the slow link has little effect on key rate away from the transition region but strongly affects sequential link-buffer occupancy. Choosing a swapping discipline therefore depends not only on whether memories can preserve partial progress, but also on how the link configuration determines where that progress must wait and decay.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857272" target="_blank" rel="noopener noreferrer">What Happens Before the Hash? Layer-Aware Statistical Testing in a Live QKD Pipeline</a></p>
+              <p class="proceedings-authors">Darshit Suratwala, Matvey Romanowski, Orr Dunkelman, Elham Amini, Jean-Pierre Seifert</p>
+              <div class="proceedings-abstract">
+                <p>Quantum Key Distribution (QKD) systems may expose final key material to applications through standardised delivery interfaces such as ETSI GS QKD 014, but intermediate post-processing stages—sifting, error correction, privacy amplification (PA)—are not standardised measurement points. That output-side testing can mask upstream defects is established rather than novel: AIS 31 declines to credit online tests applied to post-processed output, Owens et al. reported NIST SP 800-22 failures on <em>raw sifted</em> bits from an entangled-photon QKD system in 2008, and Chen et al. recently showed a Toeplitz extractor rendering an induced attack on a QRNG statistically invisible. We did not, however, find prior QKD measurements of the layer immediately upstream of the hash, which lies downstream of error correction. We instrument that boundary on a live BBM92 laboratory testbed with a minimally-invasive tap capturing the post-error-correction pay-load fed to the SHA-256 PA step and the resulting 256-bit digest, paired per record. Over a 90-minute session (<em>N</em> = 10,425 pairs) an implementation-checked seven-test battery at matched sample size <em>n =</em> 2,668,800 bits with Bonferroni correction rejects the post-EC layer on six of seven tests, the seventh (runs) failing its frequency prerequisite, while post-PA yields zero corrected rejections—a marginal-bias gap of ≈3.4 orders of magnitude. The PA input therefore remains biased after error correction. Within the session the bias shows no detectable linear trend but is over-dispersed between ≈5-minute bins, which a permutation calibration confirms is temporal rather than an artefact of record structure. We also report two specification issues in SP 800-22's longest-run test, one of which changes a verdict on our data. We scope our claims: this work does not measure the sensitivity of output-side tests to deliberately injected upstream defects, and does not certify conditional secrecy.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857265" target="_blank" rel="noopener noreferrer">Tangent Spaces of UOV and MAYO</a></p>
+              <p class="proceedings-authors">Toshihiro Suzuki, Takuma Ito, Shigenori Uchiyama</p>
+              <div class="proceedings-abstract">
+                <p>Unbalanced Oil and Vinegar (UOV) and its variants are promising candidates for post-quantum signature schemes. One of the key-recovery attacks against UOV variants is the Rectangular MinRank attack. In this work, we study this attack in detail from a geometric perspective and use this perspective to generalize the Rectangular MinRank attack. Consequently, by choosing appropriate internal parameters, we can apply the generalized attack to almost all scheme parameter sets. Furthermore, we propose improved variants of this generalized Rectangular MinRank attack and use them to evaluate the security of UOV and MAYO. Our results confirm that the evaluated Round 2 parameter sets for UOV and MAYO are resistant to this attack.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857251" target="_blank" rel="noopener noreferrer">Enclave-Anchored Hybrid Quantum-Safe Key Exchange for Untrusted Platforms</a></p>
+              <p class="proceedings-authors">Wassim Yahyaoui, Matteo Steinbach, Jordan Naccache, Johann Großschädl, Peter Roenne</p>
+              <div class="proceedings-abstract">
+                <p>The transition to Post-Quantum Cryptography (PQC) is often reduced to a primitive-replacement problem, yet the security of PQC schemes remains dependent on the integrity of the underlying host. Quantum-secure protocol frameworks like Muckle offer robust hybrid security by combining classical, post-quantum and quantum key exchanges with guarantees for Post-Compromise Security (PCS) and Forward Secrecy (FS); these guarantees collapse, however, in the face of a compromised operating system capable of exfiltrating keys, manipulating nonces, or rolling back the protocol state.</p>
+                <p>We propose MuckleTEE, a hardware-software co-design that hardens hybrid key exchange against a fully compromised host by confining only its security-critical state to a Trusted Execution Environment (TEE), while delegating heavy cryptographic operations and networking to the untrusted domain. The construction is generic over KEM-based hybrid key exchange; we instantiate it on a signature-free variant, which lets the enclave authenticate without generating post-quantum signatures, leaving only passive certificate verification inside the trusted boundary. Benchmarks on hardware Intel SGX show the TEE boundary adds 7.6% CPU-time overhead, and a formal analysis in the extended HAKE framework shows that MuckleTEE preserves session-key confidentiality, long-term identity-key secrecy, and post-compromise security against host compromise; recovery after enclave compromise requires a subsequent enclave-only fresh secret.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857254" target="_blank" rel="noopener noreferrer">A Practical Post-Quantum Distributed Ledger Protocol for Financial Institutions</a></p>
+              <p class="proceedings-authors">Yeoh Wei Zhu, Naresh Goud Boddu, Yao Ma, Shaltiel Eloul, Giulio Golinelli, Yash Satsangi, Rob Otter, Kaushik Chakraborty</p>
+              <div class="proceedings-abstract">
+                <p>Traditional financial institutions face inefficiencies that can be addressed by distributed ledger technology. However, a primary barrier to adoption is the privacy concerns surrounding publicly available transaction data. Existing private protocols for distributed ledger that focus on the RingCT model are not suitable for adoption for financial institutions. We propose a post-quantum, lattice-based transaction scheme for encrypted ledgers which better aligns with institutions' requirements for confidentiality and audit-ability. The construction leverages various zero-knowledge proof techniques, and introduces a new method for equating two commitment messages, without the capability to open one of the commitment during the re-commitment. Subsequently, we build a publicly verifiable transaction scheme that is efficient for single or multi-assets, by introducing a new compact range-proof. The techniques used and the proofs constructed could be of independent interest.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857246" target="_blank" rel="noopener noreferrer">Fuzzing, Auditing, and Formally Verifying Stateful Hash-Based Signature Verification in liboqs (Short Paper)</a></p>
+              <p class="proceedings-authors">Vishnu Ajith, Muhammad Ibrahim, Muhammed Sihan Haroon, Rajagopal Nagarajan</p>
+              <div class="proceedings-abstract">
+                <p>Post-quantum cryptography (PQC) migration now has fixed deadlines. Executive Order 14412 requires U.S. federal systems to adopt post-quantum key establishment by 2030 and post-quantum signatures by 2031, NSA's CNSA 2.0 already lists the stateful hash-based schemes XMSS and LMS for firmware signing, and Google, Microsoft, and Cloudflare all target 2029. Meeting these deadlines reduces risk only if the shared libraries organizations adopt are correct, and PQC implementations have seen far less adversarial testing than classical libraries such as OpenSSL.</p>
+                <p>We study XMSS and LMS signature verification in liboqs, the Open Quantum Safe reference C library behind PQC integrations for OpenSSL, BoringSSL, and OpenSSH. Verification is hard to fuzz efficiently because key generation is orders of magnitude slower than verification. We seed libFuzzer from precomputed Known Answer Test (KAT) vectors and mutate the public key, signature, and message independently; two harnesses built this way are merged upstream. A ten-minute AddressSanitizer campaign found CVE-2026-46344: tampered OID bytes in the public key make the verifier derive a signature length larger than the caller's buffer, causing a heap out-of-bounds read. It reproduces with a five-byte input and is fixed in liboqs 0.16.0. On the patched XMSS wrapper the harnesses reach 92.31% region coverage. A follow-up audit finds a second unguarded entry point and a distinct algorithm-substitution surface in LMS. Finally, CBMC proves that the fix keeps the derived signature length within the caller's buffer for all 1,337 declared/actual OID pairs, and recovers the original bug as a counterexample on the unpatched code.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857252" target="_blank" rel="noopener noreferrer">Direct information lower bounds for one-way communication complexity problems: Applications to the demonstration of an unconditional quantum advantage and to cryptography (Short Paper)</a></p>
+              <p class="proceedings-authors">Romain Alléaume, Gabriel Blanchot, Philippe Gaborit, Francesco Mazzoncini</p>
+              <div class="proceedings-abstract">
+                <p>Information cost is often treated as a secondary quantity in communication complexity, even when the operational resource of interest is the information revealed by a protocol rather than its message length. This mismatch becomes particularly important in quantum communication and cryptography, where classical leakage must be compared directly with the information carried by quantum states. For this reason, we derive direct finite-size lower bounds, with explicit constants, on the information cost of one-way private-coin protocols for Hidden Matching, a communication-complexity problem, and two related tasks: Sampling Matching and Beta-Partial Matching. These bounds lead to two concrete applications. First, they provide a universal classical benchmark for coherent-state implementations of Sampling Matching, opening a route to an unconditional quantum advantage in information cost for a one-way communication complexity problem on a photonic platform. Second, they substantially tighten the analysis of HM-QCT, a recent everlastingly secure hybrid post-quantum/QKD protocol, bringing its implementation closer to realistic optical parameters while preserving the possibility of exceeding the fundamental rate-loss limits of standard QKD.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857256" target="_blank" rel="noopener noreferrer">PQC-rs: Principled Design and Continuous Assurance for Post-Quantum Cryptography in Rust (Short Paper)</a></p>
+              <p class="proceedings-authors">Ro Cammarota, Caroline Wang</p>
+              <div class="proceedings-abstract">
+                <p>Post-quantum cryptography (PQC) is entering real-world deployment. As systems adopt PQC, they must be able to change algorithms and implementations without losing correctness, interoperability, or assurance. We present PQC-rs, an open-source, MIT-licensed Rust implementation of ML-KEM, ML-DSA, and SLH-DSA designed around this problem. Applications use common capabilities such as key establishment and signing, while differences between algorithms and providers remain visible where they matter for correctness, security, and performance.</p>
+                <p>PQC-rs ties this design to continuous assurance of the software version that implements it. The evaluated version reproduces all 1,767 standards-derived outcomes across the three algorithms. We further evaluate interoperability through 423 cross-provider cases with independent implementations including OpenSSL, liboqs, and Bouncy Castle, using direct comparisons where possible and cross-verification where provider interfaces differ. Beyond individual cryptographic operations, provider switching within HPKE shows that ML-KEM implementations can change without changing protocol behavior. Additional software security checks address other sources of implementation failure.</p>
+                <p>We compare PQC-rs with five established libraries: OpenSSL, liboqs, wolfSSL, AWS-LC, and Bouncy Castle, establishing a portable performance baseline and demonstrating substantial gains without platform-specific optimizations. Overall, the results show that crypto-agility does not require algorithms or implementations to be equivalent: applications can rely on common cryptographic operations while differences relevant to correctness, interoperability, security, and performance remain visible and independently tested.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857239" target="_blank" rel="noopener noreferrer">A Note on the Security Proof of SQIsign (Short Paper)</a></p>
+              <p class="proceedings-authors">Maher Mamah, David Jao</p>
+              <div class="proceedings-abstract">
+                <p>Aardal et al. (CRYPTO 2025) provided the first complete security proof of SQIsign; however, their reduction incurs a square-root loss in the prime characteristic due to the application of a loose bound on the min-entropy. For instance, at NIST security level I, an adversary making 2<sup>64</sup> signing queries renders the security proof vacuous. In this note, we show that the commitment min-entropy of SQIsign is optimal, namely <em>O</em>(1/<em>p</em>). Although this improvement does not yield full λ-bit security, we show that this preserves two-thirds of the expected bit-security. We show that this artifact comes from an information-theoretic loss in the zero-knowledge simulation of SQIsign, suggesting that a new proof technique is needed to achieve full λ-bit security at the current parameters.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857248" target="_blank" rel="noopener noreferrer">Towards Deployable Single-Click Quantum Key Distribution: A System-Level Analysis for Practical Quantum Networks (Short Paper)</a></p>
+              <p class="proceedings-authors">Valeria Saggio, Maria Luísa Mendes, Costin Luchian, Julius Piso, Alessandro Trenti, Hannes Hübel</p>
+              <div class="proceedings-abstract">
+                <p>The deployment of quantum-secure communication networks is facing rapid progress, however their practical implementation still presents significant challenges due to limited achievable distances, channel losses, resource constraints, and network imperfections. Focusing on single-click quantum key distribution (QKD) protocols, which are advantageous for their long-distance capabilities, we investigate their experimental requirements and system characteristics in the context of realistic network deployment. We provide a comprehensive assessment based on our current experimental status, anticipated improvements, different detection technologies, and channel asymmetries. We further discuss our experimental results obtained with a preliminary single-click QKD hardware implementation, showing an achievable communication distance of ~ 250 km, with the potential to extend this reach to ~ 500 km. We show that viable setup improvements enable even longer distances &gt; 1000 km. Our analysis serves as a foundation for further evaluating the applicability of single-click QKD within an existing national quantum communication infrastructure, addressing key practical considerations such as link asymmetries and channel losses. Our study and results provide a solid foundation for the practical deployment of large-scale quantum communication networks, and highlight the potential of single-click QKD as a promising candidate in this direction.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857249" target="_blank" rel="noopener noreferrer">Hybrid Quantum–Computational Key Distribution with Reduced Assumptions (Short Paper)</a></p>
+              <p class="proceedings-authors">Jean Snyman, Ioana Boureanu, Daniel Gardham</p>
+              <div class="proceedings-abstract">
+                <p>The <em>HM-QCT</em> protocol, presented by Mazzoncini et al. in 2025, uses a unique feature of quantum information to achieve <em>quantum key distribution (QKD)</em> with secret-key rates beyond standard constructions. The protocol has been designed in the hybrid <em>quantum-computational time-lock (QCT)</em> security model which imposes two independent (but related) restrictions on the attacker: (1) a computationally secure encryption scheme which a successful attacker must break within a narrow timeframe and (2) an assumption that the attacker can only store quantum information with low fidelity.</p>
+                <p>We first review the protocol and its two-assumption model by presenting, in explicit form, the two natural "harvest now, decrypt later" strategies against it, one using quantum memory and one using classical memory. We show how each is excluded by exactly one of the two assumptions, so that harvesting resistance rests on their conjunction and on the presumed existence of a technological gap: the adversary's quantum memory must decohere much faster than the time it takes to break the short-term encryption.</p>
+                <p>Finally, we introduce HM-PRF, a variant that replaces the short-term encryption with a <em>pseudorandom function (PRF)</em>, evaluated locally. By eliminating the transmission of enciphered classical information, the adversary does not need to race an impending expiry event. We compare the security of our construction against the original and argue that our PRF-based assumption yields a more realistic adversary. It simply requires the existence of <em>one-way functions</em> rather than a predicted lasting limitation of quantum computation and memory technology.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857259" target="_blank" rel="noopener noreferrer">Poster: Mapping Post-Quantum Migration Across the EVM Stack</a></p>
+              <p class="proceedings-authors">Mira Belenkiy, Duc Viet Le, Gordon Liao, Vipin Singh Sehrawat, Dragoș Rotaru, Sergey Gorbunov, Milap Sheth, Jay Logelin, Anthony De Abreu, Dan Boneh</p>
+              <div class="proceedings-abstract">
+                <p>This work introduces a simple three-phase template for post-quantum blockchain migration, focusing on EVM blockchains. As quantum risks are not uniform, the template maps migration phases against attack surfaces stratified by urgency rather than relying on a single deadline. Harvest-now-decrypt-later is an immediate privacy risk, while transaction signature forgery is less urgent, but account migration takes time and must start early. Consensus-layer risks can be addressed incrementally. This template applies to new chains, as they decide which protections to implement at genesis. We propose a novel mechanism for blockchain level migration for smart contracts that use ecrecover to check ECDSA signatures. This work demonstrates a model blockchain that implements the three-phase migration plan. We also deploy a quantum dashboard that tracks quantum computing power against ECDSA.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857271" target="_blank" rel="noopener noreferrer">Poster: Toward Post-Quantum EAP: Fallback and Fragmentation Risks in TLS-Based Authentication</a></p>
+              <p class="proceedings-authors">Ginevra Fabrizio, Anna Sperotto, Roland van Rijswijk-Deij</p>
+              <div class="proceedings-abstract">
+                <p>TLS-based Extensible Authentication Protocol (EAP) methods such as PEAP and EAP-TLS are widely used in enterprise and academic networks, but their security assumptions are built on classical public-key cryptography. As post-quantum cryptography (PQC) algorithms are adopted, their notoriously larger signatures and increased handshake times will significantly impact constrained environments or protocols relying on UDP, where larger payloads can lead to packet fragmentation and multi-roundtrip handshakes, potentially ending in failure or in timeout. In addition, non-lattice-based PQC algorithms (e.g. SPHINCS+) can exceed the TCP initial congestion window, requiring more round trips and thus leading to a fivefold increase in authentication time. This poster paper presents an early analysis of the impact of PQC on EAP fragmentation and round-trip behavior. We combine a baseline PCAP-based characterization of a real EAP exchange with a lightweight model of PQC-sized TLS handshakes to examine how larger messages affect EAP fragment counts, RTT pressure, and possible authentication failures. Our preliminary findings suggest that hybrid key exchange and PQ certificates can push EAP exchanges toward excessive fragmentation and may exceed practical RTT limits, making fragmentation-aware design a critical part of deployment.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857260" target="_blank" rel="noopener noreferrer">Poster: V2V Spam Filter with Hashed Certificate Caching: A Verify-Exhaustion Defense for Post-Quantum V2V Communication</a></p>
+              <p class="proceedings-authors">Philip Haddad, Hassan Mahmoud, Mahmoud Nabil Mahmoud, Ahmad Alsharif</p>
+              <div class="proceedings-abstract">
+                <p>Post-quantum cryptography (PQC) migration for vehicle-to-vehicle (V2V) communication replaces ECDSA-signed messages with much larger PQC-signed messages which can exceed Dedicated Short-Range Communication (DSRC) frames. This enables a denial-of-service attack vector: a malicious vehicle floods receivers with costly-to-verify PQC-signed messages, exhausting the verification capacity that Basic Safety Messages (BSMs), stale after ~100 ms, depend on. We present certificate segmentation to fit DSRC and a spam filter with a certificate-hash fast path that skips repeated certificate verification, evaluated on the PQ-V2Verifier testbed with Falcon-512 under three attack variants. For a single attacker, the filter leaves <em>zero</em> attacker messages to undergo full PQC verification while validating every verifiable legitimate BSM. We also show that the average size of a transmitted message depends only on the certificate cycle length, so the number of segments and the number of hash-only messages are interchangeable for bandwidth.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857269" target="_blank" rel="noopener noreferrer">Poster: Post-Quantum Resilience by Design: VERTEX, a Vertically Integrated Framework for NextG Cellular Networks</a></p>
+              <p class="proceedings-authors">Imtiaz Karim, Rouzbeh Behnia, Attila A Yavuz, Elisa Bertino</p>
+              <div class="proceedings-abstract">
+                <p>Next-generation (NextG) cellular networks face two converging challenges: the transition to post-quantum (PQ) security and the erosion of centralized trust as base stations become more exposed, cores span multiple administrative domains, and network operation increasingly incorporates distributed intelligence. Simply replacing classical cryptography with standardized PQ primitives is insufficient because NextG protocols impose tight communication, latency, trust, and deployment constraints. Our PQ-secure base-station bootstrapping measurements from eight live commercial cells show that SIB1 leaves only 252–264 bytes for authentication, far below the size required by standardized PQ signatures. Those results provide an important insight: PQ migration must be co-designed with network protocols and architecture rather than treated as a primitive substitution. Building on this observation, we present VERTEX, a vertically integrated framework spanning compact and distributed PQ primitives, resilient NextG protocols, trustworthy machine learning, and an end-to-end evaluation fabric. The layers are mutually dependent: cryptographic mechanisms enable secure protocols, protocols protect distributed learning and telemetry, and detections trigger revocation and rekeying. We present the architecture and an evaluation plan spanning laboratory, emulation, and city-scale testbeds. The framework is ongoing work; its central question is how cryptographic guarantees can be maintained across protocol, deployment, and learning boundaries.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857277" target="_blank" rel="noopener noreferrer">Poster: autoPQC: Hardware-in-the-Loop Formal Analysis of Hybrid PQ-TLS Protocol Implementations</a></p>
+              <p class="proceedings-authors">Ali Hamza Malik, Muhammad Taqi Raza</p>
+              <div class="proceedings-abstract">
+                <p>Hybrid TLS implementations can differ in protocol responses and execution timing even when they negotiate the same key exchange. Relating these observations to a cryptographic model requires information that packet traces alone cannot supply. We propose autoPQC, a workflow that connects differential testing on real hardware to implementation-specific computational analysis. Protocol responses guide state-machine learning; timing distributions provide evidence to prioritize source inspection. Learned transitions and source-audited cryptographic operations then form the basis for CryptoVerif secrecy and authentication queries. The prototype supports state learning and evidence lifting; hardware timing integration and CryptoVerif translation remain in progress. The planned evaluation examines which discrepancies this workflow exposes and whether model assumptions can be traced to implementation evidence.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857262" target="_blank" rel="noopener noreferrer">Poster: Everything Good Comes in 3s: How a Qutrit Port Enables Quantum Advantage</a></p>
+              <p class="proceedings-authors">Kirk McGregor, Samarth Sandeep</p>
+              <div class="proceedings-abstract">
+                <p>Advancements in pushing quantum logic onto many diversified devices have created additional interconnectivity issues and complicated interoperability prospects. However, with advancements in quantum logical sensing and hybridized continuous-discrete quantum logical circuit algorithms on quantum information processing units (QPUs), these approaches can be further used to characterize and design quantum logical interconnects that hold some prospects of quantum physical modality agnosis. With such theoretical improvements for interconnect information, quantum logical interconnects can be used for designing quantum ports for devices, such as for connecting quantum sensors to QPUs as well as architectural approaches for distributed quantum sensing networks, hybrid continuous-discrete QPU busses, and an elusive "quantum USB".</p>
+                <p>We identify that using <em>SU</em>(3) qutrits allows us to capture several of these above characteristics that can internally embed <em>SU</em>(2) qubits coupled to continuous bosons for physical interconnectivity and communications networking along with being coupled to primitive model <em>U</em>(1) noisy p-bits as a conjoint <em>U</em>(2) Hamiltonian evolving system to recapitulate some probabilistically typical bit flip errors of qubit modalities. In this way, we anticipate that future work using <em>SU</em>(3) qutrits when interconnected in a network can also help support isolation from external noises but also segregationally internalize error correction methods such that external <em>SU</em>(3) qutrit logical gate operations can be further programmed to suppress and manipulate <em>U</em>(1) noisy p-bit random operations to error correct <em>SU</em>(2) qubits that are photonically coupled.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857268" target="_blank" rel="noopener noreferrer">Poster:The Galois Orbit Cannot Help the Primal Attack on Module-LWE</a></p>
+              <p class="proceedings-authors">Narayan Ji Mishra, Shivam Kumar, Vireshwar Kumar, Ashok Kumar Bhateja</p>
+              <div class="proceedings-abstract">
+                <p>The automorphisms <em>x</em> ↦ <em>x<sup>j</sup></em> of ℤ[<em>x</em>]/(<em>x<sup>n</sup></em> + 1) carry a Module-LWE instance to another valid instance, preserve the error distribution exactly, and act as isometries, so a key appears to supply <em>n</em> free samples. We prove that this cannot reduce the block size required by the primal attack. The action is a signed permutation, so each rotated instance yields a unimodular isometric image of the original lattice, fixing every quantity the success condition sees. Combining the orbit fails too: intersecting discards the secret, and summing generically yields all of ℤ<sup>2<em>m</em>+1</sup>. Ring structure does help against overstretched NTRU and G-stable modules because there the lattice is stabilized by the symmetry; the primal lattice is not.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857274" target="_blank" rel="noopener noreferrer">Poster: From Transitional to Full Post-Quantum Authentication for 5G Base Station Bootstrapping</a></p>
+              <p class="proceedings-authors">Mirza Masfiqur Rahman, Saleh Darzi, Imtiaz Karim, Rouzbeh Behnia, Attila A Yavuz, Elisa Bertino</p>
+              <div class="proceedings-abstract">
+                <p>5G transmits System Information Blocks (SIBs) without authentication during bootstrapping, enabling fake base station attacks. Direct NIST-PQC integration is infeasible: ML-DSA requires 34 fragmented packets and up to 5,282 ms delay. We present a two-phase PQ migration framework. Phase I provides transitional security via hierarchical identity-based threshold signatures with a fail-stop mechanism backed by PQ-secure audit logging. This transitional solution requires only 144 B overhead and 2.99 ms end-to-end delay, which is three orders of magnitude faster than ML-DSA. Phase II achieves full PQ authentication via a TESLA-style HMAC chain anchored by a compact post-quantum signature, which is applied once per epoch (160.07 ms delay). Both phases fit within 1-2 SIB1 packets and are validated on a real over-the-air 5G testbed.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857250" target="_blank" rel="noopener noreferrer">Poster: Post-Quantum Migration in 5G: Security Dependencies, Challenges, and Open Questions</a></p>
+              <p class="proceedings-authors">Ramkrishna Saha, Imtiaz Karim, Bhavani Thuraisingham</p>
+              <div class="proceedings-abstract">
+                <p>Preparing 5G for quantum adversaries requires more than substituting quantum-resistant algorithms: migration must preserve security while meeting operational constraints that differ across network functions. This poster presents an area-based framework covering bootstrapping, subscriber identity protection, primary authentication, and core-network communications, focusing on Transport Layer Security (TLS) protection of service-based interfaces (SBIs). The framework maps existing mechanisms, security objectives, candidate changes, and deployment constraints. Building on this framework, we propose a unified benchmark with common evaluation principles and area-specific workloads and requirements. Planned evaluation will examine how cryptographic choices and operating conditions affect latency, communication costs, resource use, and reliability. The goal is to identify feasible migration conditions and areas requiring further protocol or implementation research.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857273" target="_blank" rel="noopener noreferrer">Poster: Noise Threshold for Certified Deletion</a></p>
+              <p class="proceedings-authors">Jigyasa Sharma, Aditya Nangia</p>
+              <div class="proceedings-abstract">
+                <p>Given a deletion certificate that does not quite match the record it is checked against, how much disagreement should a verifier accept? Demanding an exact match turns away honest recipients; accepting freely admits a recipient who kept part of the ciphertext and is waiting for the key. For BB84 carriers we separate the certificate's phase error <em>δ<sub>X</sub></em> from the data's bit error <em>δ<sub>Z</sub></em>, fix the class of schemes, and bracket the answer. The standard construction is secure exactly when <em>h</em>(<em>δ<sub>X</sub></em>) <em>+ h</em>(<em>δ<sub>Z</sub></em>) &lt; 1 against a recipient with perfect memory, which for <em>δ<sub>X</sub></em> = <em>δ<sub>Z</sub></em> means <em>δ<sub>W</sub></em> = 0.110, but up to 0.124 noisy preprocessing defeats the attack that makes this tight. Beyond the circle (1 - 2<em>δ<sub>X</sub></em>)<sup>2</sup> + (1 - 2<em>δ<sub>Z</sub></em>)<sup>2</sup> = 1, which crosses <em>δ<sub>X</sub></em> = <em>δ<sub>Z</sub></em> at <em>δ<sub>E</sub></em> ≈ 0.146, a recipient who measures every carrier on arrival breaks every scheme in the class, whatever the verification test. In between, storage helps: against the standard construction, one stored qubit per carrier beats immediate measurement above depolarizing survival 0.887, which one characterized qubit keeps for 18.6 <em>μ</em>s.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857266" target="_blank" rel="noopener noreferrer">Poster: Evaluating LLM Agents for Post-Quantum Cryptographic Migrations</a></p>
+              <p class="proceedings-authors">Krishna Upadhyay, Umar Farooq</p>
+              <div class="proceedings-abstract">
+                <p>No benchmark measures whether large language model agents can correctly add post-quantum cryptography, or PQC, to a real codebase. We present an early version of PQCMigrate-Bench, a benchmark that builds each task from a range of open-source commits that added a PQC algorithm. The agent receives the repository at the start of the range, and its patch is graded in an isolated container against held-out tests taken from the same range. The current set has 10 instances in Java, Go, Rust, Python, TypeScript, and C++ projects. In a first sweep of four models with the Inspect AI ReAct agent, 25 of 40 runs resolved their task, and every instance was resolved by at least one model.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857264" target="_blank" rel="noopener noreferrer">Demonstration: Post Quantum DNSSEC with Merkle Trees in Action!</a></p>
+              <p class="proceedings-authors">Hongying Dong, Swapneel Sheth</p>
+              <div class="proceedings-abstract">
+                <p>Domain Name System Security Extensions (DNSSEC) rely on cryptographic keys and digital signatures to ensure data origin authentication and data integrity. However, transitioning the underlying infrastructure to post-quantum cryptography (PQC) introduces challenges, including larger signature sizes that lead to the need for more storage, memory, and bandwidth that challenges the existing DNS operational profile. This demonstration presents an application of Merkle Tree Ladders (MTL) to PQC signature algorithms within DNSSEC to mitigate these challenges. Utilizing interactive Jupyter Notebooks, we showcase how a server constructs a MTL and performs incremental signing, how a client executes complete MTL verification, and how the SigTag mechanism optimizes bandwidth usage and saves storage/memory compared to direct application of a PQC algorithm. This demonstration provides an accessible environment to understand MTL concepts and specifications.</p>
+              </div>
+            </li>
+            <li class="proceedings-entry">
+              <p class="proceedings-title"><a href="https://dl.acm.org/doi/10.1145/3839338.3857270" target="_blank" rel="noopener noreferrer">Demonstration: An Interactive Bench for Symbolic Models of Quantum Protocols</a></p>
+              <p class="proceedings-authors">Ali Hamza Malik, Muhammad Taqi Raza</p>
+              <div class="proceedings-abstract">
+                <p>Symbolic verification depends on the model and the property being checked. We demonstrate a local bench for working with Tamarin models of quantum protocols. Users can change model settings, inspect and edit the generated theory, and compare lemma results. We first check executability in a prepare-and-measure quantum key distribution model. We then use a separate send model to show what happens when its preshared key is exposed. Secrecy and message correspondence fail, but executability still holds. Two built-in proof-search heuristics give the same verdicts. The bench lets attendees trace each result to the model and property that produced it.</p>
+              </div>
+            </li>
+            </ol>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 ACM PQQS. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
