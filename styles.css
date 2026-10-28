@@ -850,16 +850,20 @@ a.sponsor-card:focus-visible {
 }
 
 .program-day + .program-day {
-  margin-top: 28px;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
 .program-day h3 {
-  margin: 0 0 4px;
+  margin: 0 0 8px;
+  text-align: center;
 }
 
-.program-theme {
-  margin: 0 0 14px;
+.card p.program-theme {
+  margin: 0 0 16px;
   color: var(--muted);
+  text-align: center;
 }
 
 .program-schedule {
