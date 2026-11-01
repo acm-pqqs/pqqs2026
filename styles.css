@@ -613,12 +613,22 @@ a.sponsor-card:focus-visible {
   border-top-color: #cd7f32;
 }
 
+.sponsor-card-small {
+  height: 160px;
+  padding: 22px;
+}
+
 .sponsor-logo {
   display: block;
   width: 100%;
   max-width: 200px;
   max-height: 130px;
   object-fit: contain;
+}
+
+.sponsor-card-small .sponsor-logo {
+  max-width: 150px;
+  max-height: 72px;
 }
 
 .sponsor-tier {
@@ -899,6 +909,12 @@ a.sponsor-card:focus-visible {
   grid-column: 1 / -1;
 }
 
+.program-session-chair {
+  font-size: 0.92rem;
+  font-weight: 450;
+  color: var(--muted);
+}
+
 .program-title {
   font-style: italic;
 }
@@ -923,10 +939,18 @@ a.sponsor-card:focus-visible {
   color: #9a3412;
 }
 
+.program-session .program-time:empty {
+  min-height: 0;
+}
+
 @media (max-width: 640px) {
   .program-row {
     grid-template-columns: 1fr;
     gap: 4px;
+  }
+
+  .program-session .program-time:empty {
+    display: none;
   }
 }
 
